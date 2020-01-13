@@ -71,3 +71,74 @@ val age = 28
 
 val interpolation = "My name is $name and I'm $age years old. I'm ${ 30 - age } from my thirties."
 ```
+
+### Loops and Ranges
+
+Loops in Kotlin are pretty standart.
+
+```kotlin
+
+val names = listOf("Miguel", "Rafael", "Gabriel")
+for(name in names) {
+  println(name)
+}
+
+var x = 0
+while (x < 10) {
+    println(x)
+    x++ // Same as x += 1
+}
+
+```
+
+One can use streams just like in Java.
+
+```kotlin
+val sumOfNumbersFromOneToOneHundred = (1..100).reduce { a, i -> a + 1 }
+```
+
+
+
+### Nullable types
+
+Any type can be made to be nullable by adding a question mark to its type declaration e.g. Int?, String?, ...
+
+```kotlin
+val name: String = null // will not compile
+val name: String? = null
+
+val otherName: String? = "A name"
+
+if(otherName) {
+  // other name was cast from String? to String
+}
+```
+
+Null is chainable
+
+```kotlin
+class Person (val name: String)
+
+val person = // ....
+
+val name = person?.name
+
+person?.let {
+  person.name = "A name"
+}
+```
+
+Operators on nullable type
+
+```kotlin
+
+val name: person?.name ?: "Person is null"
+
+person?.name?.takeIf {
+  it == "A name"
+}.let {
+  println("Found!)
+}
+
+```
+
