@@ -75,25 +75,28 @@ val interpolation = "My name is $name and I'm $age years old. I'm ${ 30 - age } 
 ### Loops and Ranges
 
 Loops in Kotlin are pretty standart.
+Note the *println* function that writes to standart output.
 
 ```kotlin
 
 val names = listOf("Miguel", "Rafael", "Gabriel")
-for(name in names) {
+for(name in names) { 
   println(name)
 }
 
 var x = 0
 while (x < 10) {
     println(x)
-    x++ // Same as x += 1
+    x++ 
 }
 
 ```
 
-One can use streams just like in Java.
+One can use streams just like in Java. They are specially useful when collections are involved.
 
 ```kotlin
+
+val addOneAndCountEvenNumbers: Int = (1..100).map { it + 1 }.filter { it % 2 == 0 }.size
 val sumOfNumbersFromOneToOneHundred = (1..100).reduce { a, i -> a + 1 }
 ```
 
