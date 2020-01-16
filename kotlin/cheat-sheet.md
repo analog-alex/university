@@ -100,7 +100,51 @@ val addOneAndCountEvenNumbers: Int = (1..100).map { it + 1 }.filter { it % 2 == 
 val sumOfNumbersFromOneToOneHundred = (1..100).reduce { a, i -> a + 1 }
 ```
 
+### Collections
 
+Immutable _contra_ immutable matters.
+
+```kotlin
+
+val names = listOf("Miguel", "Gabriel", "Rafael")
+val numbers = listOf<Int>()
+
+val miguel = names[0]
+
+// mutalle
+val names = mutableListOf("Miguel", "Gabriel", "Rafael")
+names.add("Manuel")
+
+```
+
+### Classes and Inheritance
+
+Kotlin removes some boilerplate when it comes to class declarations. Below we run by some basic patterns:
+
+```kotlin
+
+class Person(val name: String, var age: Int)
+
+data class User(val username: String, val password: String)
+//... Getters & Setters, HashCode(), Equals(), toString() and Copy() automatically generated
+
+class Human(val name: String) {
+
+  // redundant getter and setter
+  val age: Int = 0
+    get() = field
+    set(value) {
+      field = value
+    } 
+    
+ val isUnderage: Boolean
+    get() = this.age <= 18
+}
+
+open class Animal
+class Dog : Animal()
+class Cat: Animal()
+```
 
 ### Nullable types
 
