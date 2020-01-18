@@ -1,4 +1,4 @@
-# Kotlin Cheat Seet
+# Kotlin Cheat Sheet
 
 for Java developers
 
