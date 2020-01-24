@@ -1,6 +1,5 @@
 # Kotlin Cheat Sheet
 
-for Java developers
 
 ## Intro
 
