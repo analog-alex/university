@@ -1,9 +1,10 @@
 # Kotlin Cheat Sheet
 
+(docs here)[https://kotlinlang.org/docs/reference/]
 
 ## Intro
 
-*Kotlin* is a JVM based (but has since slouched beyond the JVM) language that modernizes the syntax and verbosity of the usual statically-typed, object-oriented, "enterprise", _C-like_, Java and C#.
+*Kotlin* is a JVM based (but has since slouched beyond it) language that modernizes the syntax and reduces the verbosity of the usual statically-typed, object-oriented, "enterprise", _C-like_, Java and C#.
 
 In its JVM form it has full interoperability with the Java ecosystem of libraries and frameworks.
 
@@ -43,7 +44,7 @@ val one = 1 // type can be omitted when it can be inferred from the context.
 
 Note that in all cases the terminating semi-colon (;) can be omitted in Kotlin.
 
-Other variations include *const val* indicating a constant value present at compile time (i.e. cannot be attibuted by a function) and *lateinit var* for variables initialized by dependency injections or in other _setup_ methods.
+Other variations include **const val** indicating a constant value present at compile time (i.e. cannot be attibuted by a function) and **lateinit var** for variables initialized by dependency injections or in other _setup_ methods.
 
 ---
 
@@ -55,6 +56,25 @@ fun sucessor(number: Int): Int {
   //... function body
   return number + 1
 }
+
+// one liner
+fun name() = "Miguel"
+
+//  extensions
+fun String.isEmptyOrNull() = this == null || this.isEmpty()
+"Miguel".isEmptyOrNull()
+
+// infix
+infix fun Int.add(x: Int): Int = this + x
+1 shl 2 
+
+// inline
+/* 
+   inline functions insert the function's code at every call point
+   instead of formally calling a function (moving the insteruction pointer, etc...)
+*/
+inline fun ....
+
 ```
 
 ### String Interpolation
@@ -64,6 +84,31 @@ val name = "Miguel"
 val age = 28
 
 val interpolation = "My name is $name and I'm $age years old. I'm ${ 30 - age } from my thirties."
+```
+
+### Flow control
+
+Here we find our usual flow control expressions like **if** and others not so usual like **when** that replaces the _switch_ operator.
+
+```kotlin
+// Traditional usage 
+var max = a 
+if (a < b) {
+  max = b
+  println(max)
+}  
+
+// As expression 
+val max = if (a > b) a else b
+
+// 'when' example
+when (x) {
+    1 -> print("x == 1")
+    2 -> print("x == 2")
+    else -> { // Note the block
+        print("x is neither 1 nor 2")
+    }
+}
 ```
 
 ### Loops and Ranges
@@ -114,6 +159,8 @@ val set = setOf(1, 1, 2, 3)
 val map = hashMapOf(1 to "Pizza", 2 to "Hamburger")
 
 val pizza: String = map[1]
+
+val otherMap = names.associateWith { it.length } // {Miguel=6, Gabriel=7, Rafael=6}
 
 ```
 
@@ -209,4 +256,47 @@ person?.name?.takeIf {
 }.let {
   println("Found!)
 }
+```
+
+### Scope Functions
+
+Scope function allow the creations of a series of expressions that take a given object as context. The functions are let, run, with, apply, and also.
+To exemplify:
+
+```koltin
+// let
+Person("Alice", 20, "Amsterdam").let {
+    println(it)
+    it.moveTo("London")
+    it.incrementAge()
+    println(it)
+}
+
+// run
+val numbers = mutableListOf("one", "two", "three")
+val countEndsWithE = numbers.run { 
+    add("four")
+    add("five")
+    count { it.endsWith("e") }
+}
+
+// with
+val firstAndLast = with(numbers) {
+    "The first element is ${first()}," +
+    " the last element is ${last()}"
+}
+
+// apply
+val adam = Person("Adam").apply { 
+    age = 20                       // same as this.age = 20 or adam.age = 20
+    city = "London"
+}
+
+// also
+fun getRandomInt(): Int {
+    return Random.nextInt(100).also {
+        writeToLog("getRandomInt() generated value $it")
+    }
+}
+
 ```
