@@ -224,6 +224,24 @@ cars.forEach { println(it.race()) }
 // This Ford goes at 50 kph
 ```
 
+Static members and function are not really a thing in Koltin. For singletons the construct **object** is prefered.
+
+```kotlin
+object Myself {
+    fun me() = "Miguel"
+}
+```
+
+While for static like beahviour a companion object can be attached to a class. 
+
+```kotlin
+class Person {
+    companion object {
+        fun me() = "Miguel"
+    }
+}
+```
+
 ### Nullable types
 
 Any type can be made to be nullable by adding a question mark to its type declaration e.g. Int?, String?, ...
@@ -263,7 +281,7 @@ person?.name?.takeIf {
 Scope function allow the creations of a series of expressions that take a given object as context. The functions are let, run, with, apply, and also.
 To exemplify:
 
-```koltin
+```kotlin
 // let
 Person("Alice", 20, "Amsterdam").let {
     println(it)
@@ -299,4 +317,12 @@ fun getRandomInt(): Int {
     }
 }
 
+```
+
+### Type alias
+
+Rename a type to avoid namespace collisions or to ease readability.
+
+```kotlin
+typealias PersonSet = Set<Person>
 ```
