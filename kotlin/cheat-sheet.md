@@ -21,7 +21,7 @@ From wiki:
 | Long          | long          |    64bits _[-2^63, 2^63]_       |
 | Float         | float         |    32bits                       |
 | Double        | double        |    64bits                       |
-| Char          | char          |    represents a single charachter (e.g. '1' or 'a')    |
+| Char          | char          |    represents a single character (e.g. '1' or 'a')    |
 | String        | String        |     an immutable String of characters   |
 | Boolean       | boolean       |    truth value i.e. *true* or *false*   |
 | Array<T>      | T[]           |    a memory-contiguous collection of types    |
@@ -37,6 +37,11 @@ Where *val* indicates a immutable value and *var* a variable (_as the name indic
 ```kotlin
 val one: Integer = 1
 val one = 1 // type can be omitted when it can be inferred from the context. 
+
+var two = 2
+two = two + 2
+
+one = one + 1 //  will not compile
 ```
 
 Note that in all cases the terminating semi-colon (;) can be omitted in Kotlin.
