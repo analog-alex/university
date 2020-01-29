@@ -1,6 +1,6 @@
 # Kotlin Cheat Sheet
 
-(docs here)[https://kotlinlang.org/docs/reference/]
+[docs here](https://kotlinlang.org/docs/reference/)
 
 ## Intro
 
