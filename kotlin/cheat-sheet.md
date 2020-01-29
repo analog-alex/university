@@ -4,11 +4,8 @@
 
 ## Intro
 
-*Kotlin* is a JVM based (but has since slouched beyond it) language that modernizes the syntax and reduces the verbosity of the usual statically-typed, object-oriented, "enterprise", _C-like_, Java and C#.
-
-In its JVM form it has full interoperability with the Java ecosystem of libraries and frameworks.
-
-It is used widely in Mobile and Back-End development, even recently becoming the primary language for the Android SDK development.
+From wiki:
+> Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference. Kotlin is designed to interoperate fully with Java, and the JVM version of its standard library depends on the Java Class Library, but type inference allows its syntax to be more concise. Kotlin mainly targets the JVM, but also compiles to JavaScript or native code (via LLVM). Language development costs are borne by JetBrains, while the Kotlin Foundation protects the Kotlin trademark.
 
 ## The Basics
 
@@ -240,6 +237,19 @@ class Person {
         fun me() = "Miguel"
     }
 }
+```
+
+Enums are present as well.
+
+```kotlin
+enum class Direction {
+    NORTH, SOUTH, EAST, WEST 
+}
+println(Direction.NORTH) => NORTH
+println(Direction.EAST == Direction.WEST) => false
+println(Direction.SOUTH.ordinal) => 1
+Direction.values().forEach(::println) => NORTHSOUTHEASTWESTSOUTH
+println(Direction.valueOf("SOUTH")) => SOUTH
 ```
 
 ### Nullable types
