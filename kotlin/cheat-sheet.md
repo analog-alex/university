@@ -250,11 +250,11 @@ Enums are present as well.
 enum class Direction {
     NORTH, SOUTH, EAST, WEST 
 }
-println(Direction.NORTH) => NORTH
-println(Direction.EAST == Direction.WEST) => false
-println(Direction.SOUTH.ordinal) => 1
-Direction.values().forEach(::println) => NORTHSOUTHEASTWESTSOUTH
-println(Direction.valueOf("SOUTH")) => SOUTH
+println(Direction.NORTH) // => NORTH
+println(Direction.EAST == Direction.WEST) // => false
+println(Direction.SOUTH.ordinal) // => 1
+Direction.values().forEach(::println) // => NORTHSOUTHEASTWESTSOUTH
+println(Direction.valueOf("SOUTH")) // => SOUTH
 ```
 
 ### Nullable types
