@@ -1,3 +1,8 @@
+### Reset unstaged changes
+
+```
+git checkout -- .
+```
 
 ### Amend commit
 
@@ -12,7 +17,7 @@ git push -f
 git diff
 ```
 
-### Get list of staged filed
+### Get list of staged files
 
 ```
 git diff --name-only --cached
