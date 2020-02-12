@@ -2,7 +2,7 @@
 
 KDoc is Koltin's answer to JavaDoc, a way of constructing  documentation from code comments.
 KDoc allows the use of markdown.
-(kdoc documentation)[https://kotlinlang.org/docs/reference/kotlin-doc.html] 
+[kdoc documentation](https://kotlinlang.org/docs/reference/kotlin-doc.html)
 
 
 ### Example
