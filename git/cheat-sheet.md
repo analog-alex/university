@@ -9,12 +9,7 @@ _From la Wik_:
 
 A simple diagram follows: 
 
-```mermaid
-graph LR
-A[Working] -- add--> B[Staging]
-B -- commit --> C[Commited]
-C -- push --> D(Remote)
-```
+![stages](https://miro.medium.com/max/1930/1*tjrF1ff5UjVNclwwe_GREg.png)
 
 
 ## Usage
