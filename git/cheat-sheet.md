@@ -3,9 +3,9 @@
 
 _From la Wik_:
 
-*Git* is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files.
+**Git** is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files.
 
-*GitHub* is a global company that provides hosting for software development version control using Git.
+**GitHub** is a global company that provides hosting for software development version control using Git.
 
 A simple diagram follows: 
 
