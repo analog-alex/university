@@ -49,7 +49,7 @@ A good commit message is very useful when tracking changes and revising a reposi
 ```
 git push // update remote repo with local changes
 git fetch // download remote history
-git pull // update local repo with remote changes (git fetch = git merge)
+git pull // update local repo with remote changes (git fetch + git merge)
 ```
 
 ### Merges
