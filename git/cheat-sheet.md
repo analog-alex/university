@@ -94,3 +94,9 @@ git diff // lists differences between working and commited files
 git diff --name-only // same, but the file names only 
 git diff --name-only --cached // list the difference between staged and commited files
 ```
+
+### Prune local branched that are not present on remote
+
+```
+git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+```
