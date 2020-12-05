@@ -100,3 +100,11 @@ git diff --name-only --cached // list the difference between staged and commited
 ```
 git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
 ```
+
+### Remove files placed in the .gitignore if already in the remote
+
+```
+git rm -r --cached {directory}
+git commit -m '{commit message}'
+git push origin {branch}
+```
