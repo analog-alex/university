@@ -341,3 +341,30 @@ Rename a type to avoid namespace collisions or to ease readability.
 ```kotlin
 typealias PersonSet = Set<Person>
 ```
+
+### Delegation
+
+Two cool features that are available out of the box as syntatic sugar involving delegation is the **lazy** delegate and the delegate by **map**.
+
+In the **lazy** case hard hitting code can be made to run only on the first access to the variable.
+```kotlin
+val value: String by lazy {
+    val response = HttpService.get("/five/minute/call")
+    response.toString()
+}
+```
+
+As for the **map** delegate, it deserializes the map _values_ to normal properties with the same name as the _key_.
+```kotlin
+class Club (val map: Map<String, Any>) {
+  val name: String  by map
+  val trophies: Int by map
+}
+
+Club(mapOf(
+    "name" to "benfica",
+    "trophies" to Int.MAX_SIZE
+  )
+)
+```
+
