@@ -5,7 +5,7 @@
 ## Intro
 
 From wiki:
-> KTypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript. As TypeScript is a superset of JavaScript, existing JavaScript programs are also valid TypeScript programs. 
+> TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript. As TypeScript is a superset of JavaScript, existing JavaScript programs are also valid TypeScript programs. 
 
 In other words, **Typescript** is a super-set of **Javascript**, adding `types` and transpile-time type-checking as well as some extra syntax and sugar.
 
@@ -26,5 +26,5 @@ In other words, **Typescript** is a super-set of **Javascript**, adding `types` 
 | void          |    Absence of value                                               | |
 | null          |    A reference that points of nothing.                            | |
 | undefined     |    An undefined value (not initialized)                           | |
-| never         |    The return type of a function that never returns 😅           | |
+| never         |    The return type of a function that never returns 😅            | |
 | Object        |    A non primtive type                                            | |
