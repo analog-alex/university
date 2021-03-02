@@ -14,13 +14,27 @@ A simple diagram follows:
 
 ## Usage
 
+### Start from scratch
+
+To initilize, simply change to the folder that will be `git`ized and run.
+
+```
+git init // start a repository
+git status // check for status
+git remote add origin <remote repo> // connect to a remote repository
+```
+
+That folder is now a repository and `git` will track any file changes, versioning them in discret chuncks called `commits`.
+
 ### Cloning
 
-After a remote GitHub repository has been created it is necessary to clone it locally.
+After a remote GitHub repository has been created you can also clone it locally.
 
 ```
 git clone <repo_location_url>
 ```
+
+That local folder is now a repository with all the amenities!
 
 ### Branches
 
@@ -65,11 +79,25 @@ git rebase <branch_name>
 git rebase -i <branch_name>
 ```
 
+If any conflicts arise:
+
+```
+git add <traated files>
+git rebase --continue
+```
+
+Or just abort the whole thing:
+
+```
+git rebase --abort
+```
+
 ### Reset
 
 ```
 git reset <commit_id> // reset the local repository, perserving changes
 git reset --hard <commit_id> // reset the local repository, eliminating changes
+git reset --hard origin/<concerned branch>
 ```
 
 ## Extras
