@@ -19,9 +19,9 @@ A simple diagram follows:
 To initilize, simply change to the folder that will be `git`ized and run.
 
 ```
-git init // start a repository
-git status // check for status
-git remote add origin <remote repo> // connect to a remote repository
+git init                               // start a repository
+git status                             // check for status
+git remote add origin <remote repo>    // connect to a remote repository
 ```
 
 That folder is now a repository and `git` will track any file changes, versioning them in discret chuncks called `commits`.
@@ -39,9 +39,9 @@ That local folder is now a repository with all the amenities!
 ### Branches
 
 ```
-git branch // list local branches
-git branch <branch_name> // creates branch
-git branch -d <branch_name> // delete branch
+git branch                           // list local branches
+git branch <branch_name>             // creates branch
+git branch -d <branch_name>          // delete branch
 ```
 
 ### Commits
@@ -49,11 +49,11 @@ git branch -d <branch_name> // delete branch
 As the programmer makes alterations, additions and removals to the files inside the repository his work should be recorded in discrete chunks called commits.
 
 ```
-git add <file_name> // stage file
-git add . // stage all files 
-git commit // commit the changes
+git add <file_name>                // stage file
+git add .                          // stage all files 
+git commit                         // commit the changes
 
-git log // see the changes
+git log                            // see the commits list
 ```
 
 A good commit message is very useful when tracking changes and revising a repositories history. As such it is adsvisable to read some articles about good commit messages from the pros, such as [this](https://chris.beams.io/posts/git-commit/)
@@ -61,9 +61,11 @@ A good commit message is very useful when tracking changes and revising a reposi
 ### Remote tracking
 
 ```
-git push // update remote repo with local changes
-git fetch // download remote history
-git pull // update local repo with remote changes (git fetch + git merge)
+git push                           // update remote repo with local changes
+git fetch                          // download remote history
+git pull                           // update local repo with remote changes (git fetch + git merge)
+
+git push -f                        // update the remote, crushing any historical inconsistencies 
 ```
 
 ### Merges
@@ -95,9 +97,9 @@ git rebase --abort
 ### Reset
 
 ```
-git reset <commit_id> // reset the local repository, perserving changes
-git reset --hard <commit_id> // reset the local repository, eliminating changes
-git reset --hard origin/<concerned branch>
+git reset <commit_id>                        // reset the local repository, perserving changes
+git reset --hard <commit_id>                 // reset the local repository, eliminating changes
+git reset --hard origin/<concerned branch>   // reset the local branch to the remote
 ```
 
 ## Extras
@@ -118,9 +120,9 @@ git push -f
 ### Get difference between local repo and origin
 
 ```
-git diff // lists differences between working and commited files
-git diff --name-only // same, but the file names only 
-git diff --name-only --cached // list the difference between staged and commited files
+git diff                             // lists differences between working and commited files
+git diff --name-only                 // same, but the file names only 
+git diff --name-only --cached        // list the difference between staged and commited files
 ```
 
 ### Prune local branched that are not present on remote
