@@ -3,10 +3,11 @@
 
 1. Fira Code
 2. JetBrains Mono
-3. Hasklig <> Source Code Pro
+3. Hasklig (Source Code Pro with Ligatures)
 4. SF Mono
 5. Monoid
 6. Consolas
-7. Inconsolata
-8. MonoLisa
-9. Iosevka
+7. Cascadia Code
+8. Inconsolata
+9. MonoLisa
+10. Iosevka
