@@ -9,5 +9,5 @@
 6. Monoid
 7. Consolas
 8. Cascadia Code
-9. Inconsolata
+9. MonoLisa
 10. Ubuntu Mono
