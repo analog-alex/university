@@ -1,13 +1,12 @@
 ### Best fonts I've used for coding
 
 
-1. Fira Code
+1. MonoLisa
 2. JetBrains Mono
-3. Hasklig (Source Code Pro with Ligatures)
-4. SF Mono
-5. Victor Mono
-6. Monoid
-7. Consolas
+3. Fira Code
+4. Hasklig (Source Code Pro with Ligatures)
+5. Inconsolata
+6. SF Mono
+7. Victor Mono
 8. Cascadia Code
-9. MonoLisa
-10. Ubuntu Mono
+9. PT Mono 
