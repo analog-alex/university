@@ -9,4 +9,9 @@
 6. SF Mono
 7. Victor Mono
 8. Cascadia Code
-9. PT Mono 
+9. Iosevka
+10. Cartograph CF
+
+### Honorable mention for terminals
+
+- PT Mono
