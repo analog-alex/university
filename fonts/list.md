@@ -11,6 +11,7 @@
 8. Cascadia Code
 9. Iosevka
 10. Red Hat Mono
+11. GitHub Monospace (`https://github.com/githubnext/monaspace`)
 
 ### Honorable mention for terminals
 
