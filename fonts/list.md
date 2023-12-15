@@ -10,7 +10,7 @@
 7. Victor Mono
 8. Cascadia Code
 9. Iosevka
-10. Cartograph CF
+10. Red Hat Mono
 
 ### Honorable mention for terminals
 
