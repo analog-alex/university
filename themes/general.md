@@ -11,4 +11,4 @@ Just a list of names of themes that I've enjoyed for stuff like JetBrains IDE, K
 - OneDark
 - OneLight
 - CoPilot Theme
-
+- OneDarkMonokai
