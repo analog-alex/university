@@ -8,7 +8,5 @@ Just a list of names of themes that I've enjoyed for stuff like JetBrains IDE, K
 
 - Monokai (Pro)
 - Dracula
-- OneDark
-- OneLight
-- CoPilot Theme
+- Catpuccin
 - OneDarkMonokai
