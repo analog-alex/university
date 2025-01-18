@@ -10,3 +10,4 @@ Just a list of names of themes that I've enjoyed for stuff like JetBrains IDE, K
 - Dracula
 - Catpuccin
 - OneDarkMonokai
+- Nord
