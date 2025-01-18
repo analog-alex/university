@@ -11,3 +11,5 @@ Just a list of names of themes that I've enjoyed for stuff like JetBrains IDE, K
 - Catpuccin
 - OneDarkMonokai
 - Nord
+- Poimandres
+- Synthwave'84
