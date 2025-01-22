@@ -10,7 +10,7 @@
 7. Victor Mono
 8. Cascadia Code
 9. Fira Code
-10. GitHub Monospace (`https://github.com/githubnext/monaspace`)
+10. IBM Plex Mono
 
 ### Honorable mention for terminals
 
