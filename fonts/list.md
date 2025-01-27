@@ -10,8 +10,4 @@
 7. Victor Mono
 8. Cascadia Code
 9. Fira Code
-10. IBM Plex Mono
-
-### Honorable mention for terminals
-
-- PT Mono
+10. Recursive Mono ('Rec Mono Linear')
