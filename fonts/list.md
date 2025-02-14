@@ -9,5 +9,5 @@
 6. SF Mono
 7. Victor Mono
 8. Cascadia Code
-9. Fira Code
+9. IBM Plex Mono
 10. Recursive Mono ('Rec Mono Linear')
