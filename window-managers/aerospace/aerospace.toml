@@ -1,0 +1,178 @@
+# =================================================================
+# AeroSpace Configuration
+# =================================================================
+# AeroSpace is a tiling window manager for macOS
+# Documentation: https://nikitabobko.github.io/AeroSpace/
+
+# Commands executed after login to macOS user session
+# Requires 'start-at-login = true' to function properly
+after-login-command = []
+
+# Commands executed after AeroSpace startup
+# Runs after 'after-login-command' completes
+after-startup-command = []
+
+# Automatically start AeroSpace when logging into macOS
+start-at-login = false
+
+# =================================================================
+# Window Normalization Settings
+# =================================================================
+# Flatten nested containers to simplify window management
+enable-normalization-flatten-containers = true
+
+# Optimize container orientation for nested layouts
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# =================================================================
+# Layout Configuration
+# =================================================================
+# Padding around accordion layout containers (0 to disable)
+accordion-padding = 30
+
+# Default layout for root containers: 'tiles' or 'accordion'
+default-root-container-layout = 'tiles'
+
+# Default orientation for root containers
+# 'auto' adapts to monitor aspect ratio (wide=horizontal, tall=vertical)
+default-root-container-orientation = 'auto'
+
+# =================================================================
+# Mouse and Focus Behavior
+# =================================================================
+# Automatically move mouse to center of focused monitor
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# Prevent accidental app hiding via cmd-h shortcut
+automatically-unhide-macos-hidden-apps = false
+
+# =================================================================
+# Keyboard Layout Configuration
+# =================================================================
+# Keyboard layout preset for key mappings
+[key-mapping]
+    preset = 'qwerty'
+
+# =================================================================
+# Window Gaps Configuration
+# =================================================================
+# Spacing between windows and monitor edges
+# Supports per-monitor configuration using patterns
+[gaps]
+    inner.horizontal = 10
+    inner.vertical   = 10
+    outer.left       = 30
+    outer.bottom     = 15
+    outer.top        = 30
+    outer.right      = 30
+
+# =================================================================
+# Main Key Bindings
+# =================================================================
+# Primary key binding mode (required)
+# Available modifiers: cmd, alt, ctrl, shift
+# Available commands: https://nikitabobko.github.io/AeroSpace/commands
+[mode.main.binding]
+
+    # Layout controls
+    alt-slash = 'layout tiles horizontal vertical'
+    alt-comma = 'layout accordion horizontal vertical'
+
+    # Window focus navigation (vi-style)
+    alt-h = 'focus left'
+    alt-j = 'focus down'
+    alt-k = 'focus up'
+    alt-l = 'focus right'
+
+    # Window movement (vi-style)
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+
+    # Window resizing
+    alt-minus = 'resize smart -50'
+    alt-equal = 'resize smart +50'
+
+    # Workspace navigation (number row)
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
+    alt-8 = 'workspace 8'
+    alt-9 = 'workspace 9'
+
+    # Workspace navigation (QWERTY row alternative)
+    alt-q = 'workspace 1'
+    alt-w = 'workspace 2'
+    alt-e = 'workspace 3'
+    alt-r = 'workspace 4'
+    alt-t = 'workspace 5'
+    alt-y = 'workspace 6'
+    alt-u = 'workspace 7'
+    alt-i = 'workspace 8'
+    alt-o = 'workspace 9'
+
+    # Move window to workspace (number row)
+    alt-shift-1 = 'move-node-to-workspace 1'
+    alt-shift-2 = 'move-node-to-workspace 2'
+    alt-shift-3 = 'move-node-to-workspace 3'
+    alt-shift-4 = 'move-node-to-workspace 4'
+    alt-shift-5 = 'move-node-to-workspace 5'
+    alt-shift-6 = 'move-node-to-workspace 6'
+    alt-shift-7 = 'move-node-to-workspace 7'
+    alt-shift-8 = 'move-node-to-workspace 8'
+    alt-shift-9 = 'move-node-to-workspace 9'
+
+    # Move window to workspace (QWERTY row alternative)
+    alt-shift-q = 'move-node-to-workspace 1'
+    alt-shift-w = 'move-node-to-workspace 2'
+    alt-shift-e = 'move-node-to-workspace 3'
+    alt-shift-r = 'move-node-to-workspace 4'
+    alt-shift-t = 'move-node-to-workspace 5'
+    alt-shift-y = 'move-node-to-workspace 6'
+    alt-shift-u = 'move-node-to-workspace 7'
+    alt-shift-i = 'move-node-to-workspace 8'
+    alt-shift-o = 'move-node-to-workspace 9'
+
+    # Workspace and monitor management
+    alt-tab       = 'workspace-back-and-forth'
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+    # Enter service mode for advanced operations
+    alt-semicolon = 'mode service'
+
+# =================================================================
+# Workspace-Specific Configuration
+# =================================================================
+
+# Force tiling layout for workspace 6
+[[on-window-detected]]
+if.workspace = "6"
+run = "layout tiling"
+
+# =================================================================
+# Service Mode Key Bindings
+# =================================================================
+# Advanced operations and system management
+[mode.service.binding]
+    # Configuration and mode management
+    esc       = ['reload-config', 'mode main']
+    r         = ['flatten-workspace-tree', 'mode main']
+    f         = ['layout floating tiling', 'mode main']
+    backspace = ['close-all-windows-but-current', 'mode main']
+
+    # Window joining operations
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']
+
+    # System volume controls
+    down       = 'volume down'
+    up         = 'volume up'
+    shift-down = ['volume set 0', 'mode main']
+
