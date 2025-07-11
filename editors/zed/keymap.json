@@ -10,8 +10,6 @@
     "context": "Workspace",
     "bindings": {
       "cmd-i": "agent::ToggleFocus",
-      "ctrl-shift-d": "pane::SwapItemRight",
-      "ctrl-shift-a": "pane::SwapItemLeft",
       "ctrl-shift-n": "project_panel::NewFile",
       "ctrl-shift-l": "editor::Format",
       "shift shift": "file_finder::Toggle",
@@ -29,7 +27,10 @@
     "context": "Editor",
     "bindings": {
       "ctrl-shift-d": "pane::ActivateNextItem",
-      "ctrl-shift-a": "pane::ActivatePreviousItem"
+      "ctrl-shift-a": "pane::ActivatePreviousItem",
+      "cmd-g": "workspace::ToggleLeftDock",
+      "g r": "editor::FindAllReferences",
+      "g n": "editor::Rename"
     }
   }
 ]
