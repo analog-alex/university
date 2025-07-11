@@ -5,11 +5,11 @@
         "command": "composerMode.agent"
     },
     {
-        "key": "ctrl+shift+right",
+        "key": "ctrl+shift+d",
         "command": "workbench.action.nextEditor"
     },
     {
-        "key": "ctrl+shift+left",
+        "key": "ctrl+shift+a",
         "command": "workbench.action.previousEditor"
     },
     {
@@ -42,5 +42,5 @@
     {
         "key": "cmd+g",
         "command": "workbench.action.focusSideBar"
-    },
+    }
 ]

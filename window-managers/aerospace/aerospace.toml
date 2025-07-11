@@ -10,10 +10,16 @@ after-login-command = []
 
 # Commands executed after AeroSpace startup
 # Runs after 'after-login-command' completes
+# after-startup-command = ['exec-and-forget sketchybar']
 after-startup-command = []
 
 # Automatically start AeroSpace when logging into macOS
 start-at-login = false
+
+# Notify Sketchybar about workspace change
+#exec-on-workspace-change = ['/bin/bash', '-c',
+#    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+#]
 
 # =================================================================
 # Window Normalization Settings
@@ -61,10 +67,10 @@ automatically-unhide-macos-hidden-apps = false
 [gaps]
     inner.horizontal = 10
     inner.vertical   = 10
-    outer.left       = 30
+    outer.left       = 25
     outer.bottom     = 15
-    outer.top        = 30
-    outer.right      = 30
+    outer.top        = 20
+    outer.right      = 25
 
 # =================================================================
 # Main Key Bindings
