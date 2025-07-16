@@ -18,9 +18,10 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
-      // "j k": "vim::SwitchToNormalMode"
+      "g r": "editor::FindAllReferences",
+      "g n": "editor::Rename"
     }
   },
   {
@@ -28,9 +29,7 @@
     "bindings": {
       "ctrl-shift-d": "pane::ActivateNextItem",
       "ctrl-shift-a": "pane::ActivatePreviousItem",
-      "cmd-g": "workspace::ToggleLeftDock",
-      "g r": "editor::FindAllReferences",
-      "g n": "editor::Rename"
+      "cmd-g": "workspace::ToggleLeftDock"
     }
   }
 ]
