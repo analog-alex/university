@@ -65,12 +65,12 @@ automatically-unhide-macos-hidden-apps = false
 # Spacing between windows and monitor edges
 # Supports per-monitor configuration using patterns
 [gaps]
-    inner.horizontal = 10
-    inner.vertical   = 10
-    outer.left       = 30
-    outer.bottom     = 30
-    outer.top        = 30
-    outer.right      = 15
+    inner.horizontal = 5
+    inner.vertical   = 5
+    outer.left       = 20
+    outer.bottom     = 20
+    outer.top        = 20
+    outer.right      = 20
 
 # =================================================================
 # Main Key Bindings
@@ -150,9 +150,10 @@ automatically-unhide-macos-hidden-apps = false
 
     # Enter service mode for advanced operations
     alt-semicolon = 'mode service'
-    
-    # Toggle between padding configurations
-    alt-b = 'exec-and-forget ~/.config/aerospace/toggle-padding.sh'
+
+    # Padding controls
+    alt-b = ['exec-and-forget ~/.config/aerospace/toggle-padding.sh']
+    alt-p = ['exec-and-forget ~/.config/aerospace/toggle-orientation.sh']
 
 # =================================================================
 # Workspace-Specific Configuration

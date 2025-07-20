@@ -9,17 +9,19 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-i": "agent::ToggleFocus",
       "ctrl-shift-n": "project_panel::NewFile",
       "ctrl-shift-l": "editor::Format",
       "shift shift": "file_finder::Toggle",
       "ctrl-shift-w": "pane::CloseActiveItem",
-      "cmd-g": "workspace::ToggleLeftDock"
+      "cmd-g": "workspace::ToggleLeftDock",
+      "cmd-b": "project_panel::ToggleFocus"
     }
   },
   {
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space f r": "pane::DeploySearch",
       "g r": "editor::FindAllReferences",
       "g n": "editor::Rename"
     }
@@ -29,7 +31,10 @@
     "bindings": {
       "ctrl-shift-d": "pane::ActivateNextItem",
       "ctrl-shift-a": "pane::ActivatePreviousItem",
-      "cmd-g": "workspace::ToggleLeftDock"
+      "cmd-g": "workspace::ToggleLeftDock",
+      "cmd-b": "project_panel::ToggleFocus",
+      "cmd-l": "agent::ToggleFocus",
+      "cmd-k": "assistant::InlineAssist"
     }
   }
 ]
