@@ -67,10 +67,10 @@ automatically-unhide-macos-hidden-apps = false
 [gaps]
     inner.horizontal = 10
     inner.vertical   = 10
-    outer.left       = 100
-    outer.bottom     = 100
-    outer.top        = 100
-    outer.right      = 50
+    outer.left       = 30
+    outer.bottom     = 30
+    outer.top        = 30
+    outer.right      = 15
 
 # =================================================================
 # Main Key Bindings
@@ -150,6 +150,9 @@ automatically-unhide-macos-hidden-apps = false
 
     # Enter service mode for advanced operations
     alt-semicolon = 'mode service'
+    
+    # Toggle between padding configurations
+    alt-b = 'exec-and-forget ~/.config/aerospace/toggle-padding.sh'
 
 # =================================================================
 # Workspace-Specific Configuration
@@ -159,6 +162,11 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
 if.workspace = "6"
 run = "layout tiling"
+
+# Applications that should open in floating mode
+[[on-window-detected]]
+if.app-id = "com.apple.finder"
+run = "layout floating"
 
 # =================================================================
 # Service Mode Key Bindings
