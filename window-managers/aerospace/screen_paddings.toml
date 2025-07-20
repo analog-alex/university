@@ -1,0 +1,19 @@
+# different values for different screens
+
+[one]
+    inner.horizontal = 10
+    inner.vertical   = 10
+    outer.left       = 100
+    outer.bottom     = 100
+    outer.top        = 100
+    outer.right      = 50
+
+[two]
+    inner.horizontal = 10
+    inner.vertical   = 10
+    outer.left       = 30
+    outer.bottom     = 30
+    outer.top        = 30
+    outer.right      = 15
+
+
