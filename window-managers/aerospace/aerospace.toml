@@ -11,7 +11,9 @@ after-login-command = []
 # Commands executed after AeroSpace startup
 # Runs after 'after-login-command' completes
 # after-startup-command = ['exec-and-forget sketchybar']
-after-startup-command = []
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+]
 
 # Automatically start AeroSpace when logging into macOS
 start-at-login = false
@@ -65,12 +67,12 @@ automatically-unhide-macos-hidden-apps = false
 # Spacing between windows and monitor edges
 # Supports per-monitor configuration using patterns
 [gaps]
-    inner.horizontal = 5
-    inner.vertical   = 5
-    outer.left       = 20
-    outer.bottom     = 20
-    outer.top        = 20
-    outer.right      = 20
+    inner.horizontal = 15
+    inner.vertical   = 15
+    outer.left       = 100
+    outer.bottom     = 100
+    outer.top        = 100
+    outer.right      = 50
 
 # =================================================================
 # Main Key Bindings

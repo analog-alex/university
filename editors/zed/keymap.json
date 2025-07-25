@@ -22,6 +22,7 @@
     "bindings": {
       "space f f": "file_finder::Toggle",
       "space f r": "pane::DeploySearch",
+      "space t h": "theme_selector::Toggle",
       "g r": "editor::FindAllReferences",
       "g n": "editor::Rename"
     }
