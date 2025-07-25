@@ -23,18 +23,18 @@ apply_padding() {
     
     sed -i '' "s/inner\.horizontal.*= [0-9]*/inner.horizontal = $inner_horizontal/" "$CONFIG_FILE"
     sed -i '' "s/inner\.vertical.*= [0-9]*/inner.vertical   = $inner_vertical/" "$CONFIG_FILE"
-    sed -i '' "s/outer\.left.*= [0-9]*/outer.left       = $outer/" "$CONFIG_FILE"
-    sed -i '' "s/outer\.bottom.*= [0-9]*/outer.bottom     = $outer/" "$CONFIG_FILE"
-    sed -i '' "s/outer\.top.*= [0-9]*/outer.top        = $outer/" "$CONFIG_FILE"
-    sed -i '' "s/outer\.right.*= [0-9]*/outer.right      = $outer/" "$CONFIG_FILE"
+    sed -i '' "s/outer\.left.*= [0-9]*/outer.left       = $outer_left/" "$CONFIG_FILE"
+    sed -i '' "s/outer\.bottom.*= [0-9]*/outer.bottom     = $outer_bottom/" "$CONFIG_FILE"
+    sed -i '' "s/outer\.top.*= [0-9]*/outer.top        = $outer_top/" "$CONFIG_FILE"
+    sed -i '' "s/outer\.right.*= [0-9]*/outer.right      = $outer_right/" "$CONFIG_FILE"
 }
 
-# Function to detect current size based on outer.top value
+# Function to detect current size based on outer.left value
 get_current_size() {
     local current_left=$(grep "outer.left" "$CONFIG_FILE" | awk '{print $3}')
     case "$current_left" in
         "20") echo "small" ;;
-        "50") echo "medium" ;;
+        "25") echo "medium" ;;
         "100") echo "large" ;;
         *) echo "small" ;;
     esac

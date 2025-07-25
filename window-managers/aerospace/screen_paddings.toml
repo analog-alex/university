@@ -1,21 +1,27 @@
 # different values for different screens
 
 [small]
-    inner.horizontal = 5
-    inner.vertical   = 5
-    outer            = 20
-    outer_smaller    = 10
+    inner.horizontal = 15
+    inner.vertical   = 15
+    outer.left       = 20
+    outer.bottom     = 20
+    outer.top        = 20
+    outer.right      = 20
 
 [medium]
-    inner.horizontal = 10
-    inner.vertical   = 10
-    outer            = 50
-    outer_smaller    = 25
+    inner.horizontal = 25
+    inner.vertical   = 25
+    outer.left       = 25
+    outer.bottom     = 25
+    outer.top        = 25
+    outer.right      = 25
 
 [large]
-    inner.horizontal = 10
-    inner.vertical   = 10
-    outer            = 100
-    outer_smaller    = 50
+    inner.horizontal = 15
+    inner.vertical   = 15
+    outer.left       = 100
+    outer.bottom     = 100
+    outer.top        = 100
+    outer.right      = 50
 
 
