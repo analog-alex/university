@@ -1,0 +1,67 @@
+# ==============================================================================
+# KEYBINDINGS
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Tab Navigation
+# ------------------------------------------------------------------------------
+map kitty_mod+a previous_tab
+map kitty_mod+d next_tab
+
+# ------------------------------------------------------------------------------
+# Window (Split) Navigation
+# ------------------------------------------------------------------------------
+map kitty_mod+left  neighboring_window left
+map kitty_mod+right neighboring_window right
+map kitty_mod+up    neighboring_window up
+map kitty_mod+down  neighboring_window down
+
+# ------------------------------------------------------------------------------
+# Other keybindings
+#
+map shift+enter send_text all \\\n
+
+
+# ==============================================================================
+# APPEARANCE
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Tab Bar
+# ------------------------------------------------------------------------------
+tab_bar_edge bottom
+# tab_bar_background none
+tab_bar_style powerline
+tab_powerline_style slanted
+tab_title_template "{fmt.fg.c2c2c2}{title}"
+active_tab_title_template "{fmt.fg._fff}{title}"
+active_tab_font_style bold-italic
+# inactive_tab_foreground #c2c2c2
+# inactive_tab_background #8631B4
+
+# ------------------------------------------------------------------------------
+# Window Layout & Style
+# ------------------------------------------------------------------------------
+background_opacity 0.9
+background_blur 50
+hide_window_decorations titlebar-only
+window_padding_width 20 10 30 10
+window_border_width 1.0
+draw_minimal_borders yes
+inactive_text_alpha 0.5
+
+# ------------------------------------------------------------------------------
+# Fonts
+# ------------------------------------------------------------------------------
+font_size 13.0
+font_family      family='JetBrains Mono' style=Regular
+bold_font        family='JetBrains Mono' postscript_name=JetBrainsMono-Bold
+italic_font      auto
+bold_italic_font auto
+
+
+
+# BEGIN_KITTY_THEME
+# Dracula
+include current-theme.conf
+# END_KITTY_THEME

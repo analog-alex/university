@@ -31,7 +31,7 @@ apply_padding() {
 
 # Function to detect current size based on outer.left value
 get_current_size() {
-    local current_left=$(grep "outer.left" "$CONFIG_FILE" | awk '{print $3}')
+    local current_left=$(grep "outer.top" "$CONFIG_FILE" | awk '{print $3}')
     case "$current_left" in
         "20") echo "small" ;;
         "25") echo "medium" ;;

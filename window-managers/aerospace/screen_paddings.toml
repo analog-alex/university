@@ -19,9 +19,9 @@
 [large]
     inner.horizontal = 15
     inner.vertical   = 15
-    outer.left       = 100
+    outer.left       = 50
     outer.bottom     = 100
     outer.top        = 100
-    outer.right      = 50
+    outer.right      = 100
 
 

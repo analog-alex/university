@@ -8,9 +8,10 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
+    "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "o3-mini"
+      "model": "o4-mini"
     }
   },
   "features": {

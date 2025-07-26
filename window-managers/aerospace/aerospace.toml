@@ -69,10 +69,10 @@ automatically-unhide-macos-hidden-apps = false
 [gaps]
     inner.horizontal = 15
     inner.vertical   = 15
-    outer.left       = 100
-    outer.bottom     = 100
-    outer.top        = 100
-    outer.right      = 50
+    outer.left       = 20
+    outer.bottom     = 20
+    outer.top        = 20
+    outer.right      = 20
 
 # =================================================================
 # Main Key Bindings
