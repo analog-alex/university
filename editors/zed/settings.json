@@ -10,8 +10,8 @@
   "agent": {
     "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "o4-mini"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     }
   },
   "features": {
@@ -20,9 +20,9 @@
   "base_keymap": "JetBrains",
   "vim_mode": true,
   "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "buffer_font_family": "ZedMono Nerd Font",
-  "theme": "Nord",
+  "buffer_font_size": 14,
+  "buffer_font_family": "Maple Mono",
+  "theme": "Catppuccin Macchiato (Blur)",
   "icon_theme": "Catppuccin Macchiato",
   "buffer_font_features": {
     "liga": true

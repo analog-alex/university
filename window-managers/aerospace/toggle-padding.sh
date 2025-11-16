@@ -34,7 +34,7 @@ get_current_size() {
     local current_left=$(grep "outer.top" "$CONFIG_FILE" | awk '{print $3}')
     case "$current_left" in
         "20") echo "small" ;;
-        "25") echo "medium" ;;
+        "50") echo "medium" ;;
         "100") echo "large" ;;
         *) echo "small" ;;
     esac

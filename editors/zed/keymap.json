@@ -14,6 +14,7 @@
       "shift shift": "file_finder::Toggle",
       "ctrl-shift-w": "pane::CloseActiveItem",
       "cmd-g": "workspace::ToggleLeftDock",
+      "cmd-i": "workspace::ToggleRightDock",
       "cmd-b": "project_panel::ToggleFocus"
     }
   },
@@ -33,8 +34,11 @@
       "ctrl-shift-d": "pane::ActivateNextItem",
       "ctrl-shift-a": "pane::ActivatePreviousItem",
       "cmd-g": "workspace::ToggleLeftDock",
+      "cmd-i": "workspace::ToggleRightDock",
       "cmd-b": "project_panel::ToggleFocus",
       "cmd-l": "agent::ToggleFocus",
+      "cmd-u": "agent::ToggleProfileSelector",
+      "cmd-z": "agent::ToggleModelSelector",
       "cmd-k": "assistant::InlineAssist"
     }
   }
