@@ -13,9 +13,9 @@
       "ctrl-shift-l": "editor::Format",
       "shift shift": "file_finder::Toggle",
       "ctrl-shift-w": "pane::CloseActiveItem",
-      "cmd-g": "workspace::ToggleLeftDock",
+      "ctrl-n": "workspace::ToggleLeftDock",
       "cmd-i": "workspace::ToggleRightDock",
-      "cmd-b": "project_panel::ToggleFocus"
+      "ctrl-b": "project_panel::ToggleFocus"
     }
   },
   {
@@ -33,9 +33,9 @@
     "bindings": {
       "ctrl-shift-d": "pane::ActivateNextItem",
       "ctrl-shift-a": "pane::ActivatePreviousItem",
-      "cmd-g": "workspace::ToggleLeftDock",
+      "ctrl-n": "workspace::ToggleLeftDock",
       "cmd-i": "workspace::ToggleRightDock",
-      "cmd-b": "project_panel::ToggleFocus",
+      "ctrl-b": "project_panel::ToggleFocus",
       "cmd-l": "agent::ToggleFocus",
       "cmd-u": "agent::ToggleProfileSelector",
       "cmd-z": "agent::ToggleModelSelector",
