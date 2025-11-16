@@ -78,6 +78,11 @@
       "type": "prompt"
     }
   ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#88c0d0",
+    "template": "~"
+  },
   "final_space": true,
   "version": 3
 }

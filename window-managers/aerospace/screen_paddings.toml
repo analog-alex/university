@@ -9,17 +9,17 @@
     outer.right      = 20
 
 [medium]
-    inner.horizontal = 25
-    inner.vertical   = 25
-    outer.left       = 25
-    outer.bottom     = 25
-    outer.top        = 25
-    outer.right      = 25
+    inner.horizontal = 50
+    inner.vertical   = 50
+    outer.left       = 50
+    outer.bottom     = 50
+    outer.top        = 50
+    outer.right      = 50
 
 [large]
     inner.horizontal = 15
     inner.vertical   = 15
-    outer.left       = 50
+    outer.left       = 100
     outer.bottom     = 100
     outer.top        = 100
     outer.right      = 100
