@@ -10,6 +10,7 @@
     "context": "Workspace",
     "bindings": {
       "ctrl-n": "project_panel::ToggleFocus",
+      "ctrl-l": "agent::ToggleFocus",
       "shift shift": "file_finder::Toggle",
     },
   },
@@ -17,6 +18,7 @@
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
       // NvChad-style leader mappings
+      "space space": "file_finder::Toggle",
       "space f f": "file_finder::Toggle",
       "space f w": "pane::DeploySearch",
       "space f b": "tab_switcher::Toggle",
@@ -77,12 +79,13 @@
     "bindings": {
       "ctrl-shift-p": "editor::ShowEditPrediction",
       "ctrl-shift-y": "editor::AcceptEditPrediction",
-      "ctrl-shift-o": "editor::AcceptNextWordEditPrediction",
+      "ctrl-shift-o": "editor::AcceptPartialEditPrediction",
     },
   },
   {
     "context": "ProjectPanel",
     "bindings": {
+      "space e": "workspace::ActivatePreviousPane",
       "ctrl-n": "workspace::ToggleRightDock",
       "ctrl-shift-n": "project_panel::ToggleFocus",
       "ctrl-shift-q": "workspace::ToggleLeftDock",
@@ -98,11 +101,10 @@
   {
     "context": "AssistantPanel || ContextEditor || AgentPanel",
     "bindings": {
-      "ctrl-shift-q": "workspace::ToggleRightDock",
+      "space a a": "workspace::ActivatePreviousPane",
+      "ctrl-l": "workspace::ToggleRightDock",
       "ctrl-shift-l": "agent::ToggleFocus",
       "escape": "workspace::ActivatePreviousPane",
-      "ctrl-shift-i": "agent::ToggleProfileSelector",
-      "ctrl-shift-m": "agent::ToggleModelSelector",
     },
   },
   {

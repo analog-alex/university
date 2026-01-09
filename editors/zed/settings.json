@@ -7,27 +7,51 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": { "dock": "right" },
   "agent": {
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5-mini"
-    }
+      "model": "gpt-5-mini",
+    },
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "zed",
   },
+  "show_edit_predictions": false,
   "base_keymap": "JetBrains",
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "buffer_font_family": "Maple Mono",
-  "theme": "Catppuccin Macchiato",
-  "icon_theme": "Catppuccin Macchiato",
+  "theme": "Duskfox - opaque",
+  "icon_theme": "Catppuccin Mocha",
   "buffer_font_features": {
-    "liga": true
+    "liga": true,
   },
   "tabs": {
-    "file_icons": true
-  }
+    "file_icons": true,
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": false,
+  },
+  "indent_guides": {
+    "enabled": true,
+  },
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic",
+      },
+      "type": {
+        "font_weight": 700,
+        "font_style": "italic",
+      },
+      "keyword": {
+        "font_style": "normal",
+      },
+    },
+  },
 }
