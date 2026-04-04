@@ -72,7 +72,7 @@ include current-theme.conf
 
 
 # BEGIN_KITTY_FONTS
-font_family      family="Ioskeley Mono"
+font_family      family='Ioskeley Mono' postscript_name=Ioskeley-Mono
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
