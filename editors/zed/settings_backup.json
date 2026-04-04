@@ -7,9 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "edit_predictions": {
-    "provider": "zed",
-  },
   "project_panel": { "dock": "right" },
   "agent": {
     "default_profile": "write",
@@ -18,13 +15,16 @@
       "model": "gpt-5",
     },
   },
+  "features": {
+    "edit_prediction_provider": "zed",
+  },
   "show_edit_predictions": false,
   "base_keymap": "JetBrains",
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 13,
   "buffer_font_family": "Input",
-  "theme": "Catppuccin Macchiato (Blue Blur+)",
+  "theme": "Maple Dark",
   "icon_theme": "Catppuccin Mocha",
   "buffer_font_features": {
     "liga": true,

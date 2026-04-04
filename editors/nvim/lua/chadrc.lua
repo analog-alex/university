@@ -6,7 +6,8 @@
 local M = {}
 
 M.base46 = {
-	theme = "nord",
+	theme = "catppuccin_macchiato",
+	-- Use "catppuccin_macchiato" for Catppuccin's Macchiato flavor.
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },

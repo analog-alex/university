@@ -29,7 +29,7 @@
       // alteranitve (kitty like)
       "ctrl-shift-a": "pane::ActivatePreviousItem",
       "ctrl-shift-d": "pane::ActivateNextItem",
-      "ctrl-shift-w": "pane::CloseActiveItem",
+      "ctrl-shift-q": "pane::CloseActiveItem",
 
       // lsp
       "g r": "editor::FindAllReferences",
@@ -75,6 +75,8 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
+      "cmd-k": "assistant::InlineAssist",
+      "ctrl-shift-a": "editor::NextEditPrediction",
       "ctrl-shift-p": "editor::ShowEditPrediction",
       "ctrl-shift-y": "editor::AcceptEditPrediction",
       "ctrl-shift-o": "editor::AcceptNextWordEditPrediction",

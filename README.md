@@ -14,6 +14,7 @@ This repository serves as a centralized knowledge base and quick reference colle
 
 ```
 university/
+├── sync-configs.sh              # Syncs live configs back into this repo
 ├── editors/                    # Editor configuration files
 │   ├── cursor/                 # Cursor editor keybindings
 │   └── zed/                    # Zed editor keymap
@@ -24,7 +25,8 @@ university/
 │       ├── kotlin/             # Kotlin language reference and KDoc guide
 │       └── typescript/         # TypeScript reference with advanced features
 ├── terminals/                  # Terminal configuration
-│   └── kitty/                  # Kitty terminal config with Tokyo Night theme
+│   ├── kitty/                  # Kitty terminal config with Nord theme
+│   └── oh-my-posh/             # Oh My Posh themes and switcher script
 ├── themes/                     # General theming documentation
 └── window-managers/            # Window manager configurations
     └── aerospace/              # AeroSpace tiling window manager config
@@ -35,6 +37,7 @@ university/
 - **Language References**: Comprehensive cheat sheets for Kotlin, TypeScript, and more
 - **Development Tools**: Git commands, editor configurations, and terminal setups
 - **System Configuration**: Window manager and terminal configurations for macOS
+- **Config Syncing**: `sync-configs.sh` copies live config changes back into the repo
 - **Organized Structure**: Laboratory-style organization for quick access to information
 
 ## Usage

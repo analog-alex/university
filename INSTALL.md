@@ -106,9 +106,15 @@ cp terminals/kitty/current-theme.conf ~/.config/kitty/
 
 ### 3. Configure Oh My Posh
 ```bash
-mkdir -p ~/Documents/oh-my-posh
-cp terminals/oh-my-posh/* ~/Documents/oh-my-posh/
+cp terminals/oh-my-posh/*.omp.json ~/.config/
+cp terminals/oh-my-posh/switch-theme.sh ~/.config/
+chmod +x ~/.config/switch-theme.sh
 ```
+
+Current themes in this repo:
+- `analog_nord.omp.json`
+- `local.omp.json`
+- `miguel.omp.json`
 
 ### 4. Configure Neovim
 ```bash

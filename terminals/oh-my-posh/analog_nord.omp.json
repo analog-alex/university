@@ -34,6 +34,42 @@
           "type": "kubectl"
         },
         {
+          "foreground": "#8fbcbb",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}<#5e81ac>]</>",
+          "type": "node"
+        },
+        {
+          "foreground": "#a3be8c",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "python"
+        },
+        {
+          "foreground": "#88c0d0",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue627 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "go"
+        },
+        {
+          "foreground": "#d08770",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue7a8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "rust"
+        },
+        {
+          "foreground": "#ebcb8b",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue6a9 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "zig"
+        },
+        {
+          "foreground": "#5e81ac",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue61d {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "cmake"
+        },
+        {
           "foreground": "#d8dee9",
           "style": "plain",
           "template": "<#5e81ac>[</>\uf0e7<#5e81ac>]</>",
@@ -44,6 +80,21 @@
           "style": "plain",
           "template": "<#5e81ac>[x</>{{ reason .Code }}<#5e81ac>]</>",
           "type": "status"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#81a1c1",
+          "options": {
+            "precision": 1
+          },
+          "style": "plain",
+          "template": "<#5e81ac>[</>CPU {{ round .Load1 .Precision }} · MEM {{ round .PhysicalPercentUsed .Precision }}% ({{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB)<#5e81ac>]</>",
+          "type": "sysinfo"
         }
       ],
       "type": "prompt"
