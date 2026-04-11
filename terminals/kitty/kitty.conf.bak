@@ -46,8 +46,8 @@ active_tab_font_style bold-italic
 # ------------------------------------------------------------------------------
 # Window Layout & Style
 # ------------------------------------------------------------------------------
-background_opacity 0.80
-background_blur 90
+background_opacity 1
+#background_blur 90
 hide_window_decorations titlebar-only
 window_padding_width 20 10 30 10
 window_border_width 1.0
@@ -66,14 +66,14 @@ font_size 13.0
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
+# Nord
 include current-theme.conf
 # END_KITTY_THEME
 
 
 # BEGIN_KITTY_FONTS
-font_family      family='Ioskeley Mono' postscript_name=Ioskeley-Mono
-bold_font        auto
+font_family      family="Victor Mono"
+bold_font        family='Victor Mono' style=Bold
 italic_font      auto
-bold_italic_font auto
+bold_italic_font family='Victor Mono' style='Bold Italic'
 # END_KITTY_FONTS
