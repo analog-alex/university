@@ -63,6 +63,14 @@
       "ctrl-l": "agent::ToggleFocus",
       "ctrl-shift-n": "project_panel::ToggleFocus",
       "ctrl-shift-l": "agent::ToggleFocus",
+
+      // more key bindings
+      "K": "editor::Hover",
+      "g t": "editor::GoToTypeDefinition",
+      "]d": "editor::GoToDiagnostic",
+      "[d": "editor::GoToPreviousDiagnostic",
+      "space e": "diagnostics::Deploy",
+      "space t t": "terminal_panel::ToggleFocus",
     },
   },
   {
@@ -87,7 +95,7 @@
     "bindings": {
       "ctrl-n": "workspace::ToggleRightDock",
       "ctrl-shift-n": "project_panel::ToggleFocus",
-      "ctrl-shift-q": "workspace::ToggleLeftDock",
+      "ctrl-shift-w": "workspace::ToggleLeftDock",
       "ctrl-shift-a": "project_panel::NewFile",
       "ctrl-shift-f": "project_panel::NewDirectory",
       "ctrl-shift-r": "project_panel::Rename",
@@ -98,9 +106,9 @@
     },
   },
   {
-    "context": "AssistantPanel || ContextEditor || AgentPanel",
+    "context": "AssistantPanel || AgentPanel",
     "bindings": {
-      "ctrl-shift-q": "workspace::ToggleRightDock",
+      "ctrl-shift-w": "workspace::ToggleRightDock",
       "ctrl-shift-l": "agent::ToggleFocus",
       "escape": "workspace::ActivatePreviousPane",
       "ctrl-shift-i": "agent::ToggleProfileSelector",

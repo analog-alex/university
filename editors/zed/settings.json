@@ -12,10 +12,12 @@
   },
   "project_panel": { "dock": "right" },
   "agent": {
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "gpt-5",
+      "model": "claude-sonnet-4.6",
     },
   },
   "show_edit_predictions": false,
@@ -24,7 +26,7 @@
   "ui_font_size": 16,
   "buffer_font_size": 13,
   "buffer_font_family": "Input",
-  "theme": "Catppuccin Macchiato (Blue Blur+)",
+  "theme": "Glass",
   "icon_theme": "Catppuccin Mocha",
   "buffer_font_features": {
     "liga": true,
