@@ -35,6 +35,7 @@ print_error() {
 
 # Directory mappings for complete directory sync: system_dir:repo_dir
 DIRECTORY_MAPPINGS=(
+    "$HOME/.agents|.agents"
     "$HOME/.config/nvim|editors/nvim"
     "$HOME/.config/aerospace|window-managers/aerospace"
     "$HOME/.config/ghostty|terminals/ghostty"
