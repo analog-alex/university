@@ -50,8 +50,8 @@ CONFIG_MAPPINGS=(
     "$HOME/Library/Application Support/Cursor/User/keybindings.json|editors/cursor/keybindings.json"
 )
 
-# Oh My Posh files now live in ~/.config
-OMP_SYSTEM_DIR="$HOME/.config"
+# Oh My Posh files now live in ~/.config/oh-my-posh
+OMP_SYSTEM_DIR="$HOME/.config/oh-my-posh"
 OMP_REPO_DIR="terminals/oh-my-posh"
 
 # Function to check if file exists and is readable
@@ -198,7 +198,7 @@ sync_omp_themes() {
         fi
     done < <(find "$OMP_SYSTEM_DIR" -maxdepth 1 -type f \( -name "*.omp.json" -o -name "switch-theme.sh" \) -print0)
 
-    # Remove repo files that were deleted from ~/.config
+    # Remove repo files that were deleted from ~/.config/oh-my-posh
     while IFS= read -r -d '' repo_file; do
         local filename="$(basename "$repo_file")"
 
