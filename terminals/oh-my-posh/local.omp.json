@@ -1,0 +1,123 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#8bd5ca",
+          "style": "plain",
+          "template": " {{ .UserName }} on",
+          "type": "session"
+        },
+        {
+          "foreground": "#91d7e3",
+          "options": {
+            "folder_separator_icon": "/",
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": "  {{ base .Location }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#c6a0f6",
+          "powerline_symbol": "",
+          "options": {
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#8aadf4",
+          "options": {
+            "precision": 1
+          },
+          "style": "plain",
+          "template": "CPU {{ round .Load1 .Precision }} | RAM {{ round .PhysicalPercentUsed .Precision }}% ",
+          "type": "sysinfo"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#a6da95",
+          "options": {
+            "extensions": [
+              "*.js",
+              "*.ts",
+              "package.json",
+              ".nvmrc",
+              "pnpm-workspace.yaml",
+              ".pnpmfile.cjs",
+              ".vue",
+              "bun.lock",
+              "bun.lockb"
+            ],
+            "fetch_package_manager": true
+          },
+          "style": "plain",
+          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "foreground": "#eed49f",
+          "style": "plain",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "type": "python"
+        },
+        {
+          "foreground": "#7dc4e4",
+          "style": "plain",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "go"
+        },
+        {
+          "foreground": "#f5a97f",
+          "style": "plain",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "zig"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ed8796",
+          "style": "plain",
+          "template": " ",
+          "type": "root"
+        },
+        {
+          "foreground": "#eed49f",
+          "style": "plain",
+          "template": "# ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#f5bde6",
+    "template": "~"
+  },
+  "final_space": true,
+  "version": 4
+}
