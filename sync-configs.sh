@@ -37,6 +37,7 @@ print_error() {
 DIRECTORY_MAPPINGS=(
     "$HOME/.agents|.agents"
     "$HOME/.config/nvim|editors/nvim"
+    "$HOME/.config/opencode|editors/opencode"
     "$HOME/.config/aerospace|window-managers/aerospace"
     "$HOME/.config/ghostty|terminals/ghostty"
     "$HOME/.config/fastfetch|system/fastfetch"
@@ -138,7 +139,7 @@ sync_directory() {
         local repo_file="$repo_dir/$rel_path"
         
         # Skip version control directories and common temporary files
-        if [[ "$rel_path" == .git/* ]] || [[ "$rel_path" == .svn/* ]] || [[ "$rel_path" == .hg/* ]] || [[ "$rel_path" == *~ ]] || [[ "$rel_path" == .DS_Store ]]; then
+        if [[ "$rel_path" == .git/* ]] || [[ "$rel_path" == .svn/* ]] || [[ "$rel_path" == .hg/* ]] || [[ "$rel_path" == node_modules/* ]] || [[ "$rel_path" == */node_modules/* ]] || [[ "$rel_path" == *~ ]] || [[ "$rel_path" == .DS_Store ]]; then
             continue
         fi
         
