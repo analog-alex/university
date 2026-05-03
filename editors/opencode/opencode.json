@@ -1,0 +1,38 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "ask": {
+      "mode": "primary",
+      "description": "Answer questions in read-only mode without changing files",
+      "temperature": 0.2,
+      "prompt": "You are in Ask mode. Prioritize explanation, architecture guidance, and code references. Do not modify files or run shell commands. If implementation is requested, propose a concise plan and suggest switching to Build mode.",
+      "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "webfetch": "allow",
+        "edit": "deny",
+        "bash": "deny",
+        "task": "deny",
+        "external_directory": "deny",
+        "lsp": "deny",
+        "skill": "deny",
+        "todowrite": "allow",
+        "question": "allow"
+      }
+    }
+  },
+  "mcp": {
+    "linear-server": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp",
+      "enabled": true
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp",
+      "enabled": true
+    }
+  }
+}

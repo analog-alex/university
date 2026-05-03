@@ -1,14 +1,14 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/logos/apple_nord.txt",
+    "source": "~/.config/fastfetch/logos/apple.txt",
     "color": {
-      "1": "#d8dee9",
-      "2": "#e5e9f0", 
-      "3": "#eceff4",
-      "4": "#4c566a",
-      "5": "#5e81ac",
-      "6": "#81a1c1"
+      "1": "#cba6f7",
+      "2": "#f5c2e7",
+      "3": "#f38ba8",
+      "4": "#fab387",
+      "5": "#f9e2af",
+      "6": "#a6e3a1"
     }
   },
   "modules": [

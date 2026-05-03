@@ -35,7 +35,9 @@ print_error() {
 
 # Directory mappings for complete directory sync: system_dir:repo_dir
 DIRECTORY_MAPPINGS=(
+    "$HOME/.agents|.agents"
     "$HOME/.config/nvim|editors/nvim"
+    "$HOME/.config/opencode|editors/opencode"
     "$HOME/.config/aerospace|window-managers/aerospace"
     "$HOME/.config/ghostty|terminals/ghostty"
     "$HOME/.config/fastfetch|system/fastfetch"
@@ -49,8 +51,8 @@ CONFIG_MAPPINGS=(
     "$HOME/Library/Application Support/Cursor/User/keybindings.json|editors/cursor/keybindings.json"
 )
 
-# Oh My Posh files now live in ~/.config
-OMP_SYSTEM_DIR="$HOME/.config"
+# Oh My Posh files now live in ~/.config/oh-my-posh
+OMP_SYSTEM_DIR="$HOME/.config/oh-my-posh"
 OMP_REPO_DIR="terminals/oh-my-posh"
 
 # Function to check if file exists and is readable
@@ -137,7 +139,7 @@ sync_directory() {
         local repo_file="$repo_dir/$rel_path"
         
         # Skip version control directories and common temporary files
-        if [[ "$rel_path" == .git/* ]] || [[ "$rel_path" == .svn/* ]] || [[ "$rel_path" == .hg/* ]] || [[ "$rel_path" == *~ ]] || [[ "$rel_path" == .DS_Store ]]; then
+        if [[ "$rel_path" == .git/* ]] || [[ "$rel_path" == .svn/* ]] || [[ "$rel_path" == .hg/* ]] || [[ "$rel_path" == node_modules/* ]] || [[ "$rel_path" == */node_modules/* ]] || [[ "$rel_path" == *~ ]] || [[ "$rel_path" == .DS_Store ]]; then
             continue
         fi
         
@@ -197,7 +199,7 @@ sync_omp_themes() {
         fi
     done < <(find "$OMP_SYSTEM_DIR" -maxdepth 1 -type f \( -name "*.omp.json" -o -name "switch-theme.sh" \) -print0)
 
-    # Remove repo files that were deleted from ~/.config
+    # Remove repo files that were deleted from ~/.config/oh-my-posh
     while IFS= read -r -d '' repo_file; do
         local filename="$(basename "$repo_file")"
 
