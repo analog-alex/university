@@ -5,9 +5,11 @@
 
 set -e
 
-# Repository root
-REPO_ROOT="/Users/miguelalexandre/Documents/configs/university"
-cd "$REPO_ROOT"
+# Repository root (robust: prefers git toplevel, falls back to script dir; works when symlinked)
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || (cd "$(dirname "${BASH_SOURCE[0]}")" && pwd))"
+
+# Dry-run mode (preview only, no filesystem mutations)
+DRY_RUN=false
 
 # Color codes for output
 RED='\033[0;31m'
@@ -72,8 +74,32 @@ check_file_exists() {
 ensure_directory() {
     local dir_path="$1"
     if [[ ! -d "$dir_path" ]]; then
-        print_status "Creating directory: $dir_path"
-        mkdir -p "$dir_path"
+        if [[ $DRY_RUN == true ]]; then
+            print_status "[DRY-RUN] Would create directory: $dir_path"
+        else
+            print_status "Creating directory: $dir_path"
+            mkdir -p "$dir_path"
+        fi
+    fi
+}
+
+# Safe wrappers that respect DRY_RUN (no mutations when dry-running)
+safe_cp() {
+    local src="$1"
+    local dst="$2"
+    if [[ $DRY_RUN == true ]]; then
+        print_status "[DRY-RUN] Would copy: $src -> $dst"
+    else
+        cp "$src" "$dst"
+    fi
+}
+
+safe_rm() {
+    local path="$1"
+    if [[ $DRY_RUN == true ]]; then
+        print_status "[DRY-RUN] Would remove: $path"
+    else
+        rm "$path"
     fi
 }
 
@@ -85,7 +111,7 @@ sync_file() {
 
     if ! check_file_exists "$system_file"; then
         print_warning "System file not found: $system_file"
-        return 0
+        return 1
     fi
 
     # Ensure the repository directory exists
@@ -94,8 +120,8 @@ sync_file() {
     # Check if repo file exists
     if [[ ! -f "$repo_file" ]]; then
         print_status "New config file detected: $system_file"
-        cp "$system_file" "$repo_file"
-        print_success "Copied new file: $repo_file"
+        safe_cp "$system_file" "$repo_file"
+        if [[ $DRY_RUN != true ]]; then print_success "Copied new file: $repo_file"; fi
         changes_detected=true
     else
         # Compare files
@@ -109,8 +135,8 @@ sync_file() {
             echo ""
             
             # Copy the updated file
-            cp "$system_file" "$repo_file"
-            print_success "Updated: $repo_file"
+            safe_cp "$system_file" "$repo_file"
+            if [[ $DRY_RUN != true ]]; then print_success "Updated: $repo_file"; fi
             changes_detected=true
         fi
     fi
@@ -127,7 +153,7 @@ sync_directory() {
 
     if [[ ! -d "$system_dir" ]]; then
         print_warning "$dir_name directory not found: $system_dir"
-        return 0
+        return 1
     fi
 
     ensure_directory "$repo_dir"
@@ -139,7 +165,7 @@ sync_directory() {
         local repo_file="$repo_dir/$rel_path"
         
         # Skip version control directories and common temporary files
-        if [[ "$rel_path" == .git/* ]] || [[ "$rel_path" == .svn/* ]] || [[ "$rel_path" == .hg/* ]] || [[ "$rel_path" == node_modules/* ]] || [[ "$rel_path" == */node_modules/* ]] || [[ "$rel_path" == *~ ]] || [[ "$rel_path" == .DS_Store ]]; then
+        if [[ "$rel_path" == .git/* ]] || [[ "$rel_path" == .svn/* ]] || [[ "$rel_path" == .hg/* ]] || [[ "$rel_path" == node_modules/* ]] || [[ "$rel_path" == */node_modules/* ]] || [[ "$rel_path" == *~ ]] || [[ "$rel_path" == *.bak ]] || [[ "$rel_path" == */.DS_Store ]]; then
             continue
         fi
         
@@ -157,8 +183,8 @@ sync_directory() {
                 echo ""
             fi
             
-            cp "$system_file" "$repo_file"
-            print_success "Updated: $repo_file"
+            safe_cp "$system_file" "$repo_file"
+            if [[ $DRY_RUN != true ]]; then print_success "Updated: $repo_file"; fi
             changes_detected=true
         fi
     done < <(find "$system_dir" -type f -print0)
@@ -172,7 +198,7 @@ sync_omp_themes() {
 
     if [[ ! -d "$OMP_SYSTEM_DIR" ]]; then
         print_warning "Oh My Posh directory not found: $OMP_SYSTEM_DIR"
-        return 0
+        return 1
     fi
 
     ensure_directory "$OMP_REPO_DIR"
@@ -193,8 +219,8 @@ sync_omp_themes() {
                 echo ""
             fi
             
-            cp "$system_file" "$repo_file"
-            print_success "Updated: $repo_file"
+            safe_cp "$system_file" "$repo_file"
+            if [[ $DRY_RUN != true ]]; then print_success "Updated: $repo_file"; fi
             changes_detected=true
         fi
     done < <(find "$OMP_SYSTEM_DIR" -maxdepth 1 -type f \( -name "*.omp.json" -o -name "switch-theme.sh" \) -print0)
@@ -205,8 +231,8 @@ sync_omp_themes() {
 
         if [[ ! -f "$OMP_SYSTEM_DIR/$filename" ]]; then
             print_status "Removed Oh My Posh file: $filename"
-            rm "$repo_file"
-            print_success "Deleted: $repo_file"
+            safe_rm "$repo_file"
+            if [[ $DRY_RUN != true ]]; then print_success "Deleted: $repo_file"; fi
             changes_detected=true
         fi
     done < <(find "$OMP_REPO_DIR" -maxdepth 1 -type f \( -name "*.omp.json" -o -name "switch-theme.sh" \) -print0)
@@ -216,7 +242,33 @@ sync_omp_themes() {
 
 # Main execution
 main() {
-    print_status "Starting configuration sync..."
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --dry-run)
+                DRY_RUN=true
+                shift
+                ;;
+            -h|--help)
+                echo "Usage: $(basename "$0") [--dry-run]"
+                echo "  --dry-run   Preview changes without modifying any files"
+                exit 0
+                ;;
+            *)
+                print_error "Unknown option: $1"
+                echo "Usage: $(basename "$0") [--dry-run]"
+                exit 1
+                ;;
+        esac
+    done
+
+    cd "$REPO_ROOT" || { print_error "Failed to cd to repo root: $REPO_ROOT"; exit 1; }
+
+    if [[ $DRY_RUN == true ]]; then
+        print_status "Starting configuration sync (DRY RUN - no files will be modified)..."
+    else
+        print_status "Starting configuration sync..."
+    fi
     local total_changes=false
 
     # Sync complete directories
@@ -244,12 +296,21 @@ main() {
 
     # Summary
     echo ""
-    if $total_changes; then
-        print_success "Configuration sync complete! Changes detected and updated."
-        print_status "Review changes with: git status && git diff"
-        print_status "To commit changes: git add . && git commit -m 'update configuration files'"
+    if [[ $DRY_RUN == true ]]; then
+        if [[ $total_changes == true ]]; then
+            print_status "Dry run complete. Planned changes detected (nothing written)."
+            print_status "Review planned changes with: git status && git diff"
+        else
+            print_status "Dry run complete. No changes would be made."
+        fi
     else
-        print_success "Configuration sync complete! No changes detected."
+        if [[ $total_changes == true ]]; then
+            print_success "Configuration sync complete! Changes detected and updated."
+            print_status "Review changes with: git status && git diff"
+            print_status "To commit changes: git add . && git commit -m 'update configuration files'"
+        else
+            print_success "Configuration sync complete! No changes detected."
+        fi
     fi
 }
 
