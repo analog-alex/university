@@ -105,10 +105,13 @@ cp terminals/kitty/current-theme.conf ~/.config/kitty/
 ```
 
 ### 3. Configure Oh My Posh
+Oh My Posh themes now live in `~/.config/oh-my-posh/` (synced by `sync-configs.sh`).
+
 ```bash
-cp terminals/oh-my-posh/*.omp.json ~/.config/
-cp terminals/oh-my-posh/switch-theme.sh ~/.config/
-chmod +x ~/.config/switch-theme.sh
+mkdir -p ~/.config/oh-my-posh
+cp terminals/oh-my-posh/*.omp.json ~/.config/oh-my-posh/
+cp terminals/oh-my-posh/switch-theme.sh ~/.config/oh-my-posh/
+chmod +x ~/.config/oh-my-posh/switch-theme.sh
 ```
 
 Current themes in this repo:
@@ -117,15 +120,18 @@ Current themes in this repo:
 - `miguel.omp.json`
 
 ### 4. Configure Neovim
-```bash
-# If you installed NvChad using the command above, copy custom configurations
-cp -r editors/nvim/lua/custom/* ~/.config/nvim/lua/custom/ 2>/dev/null || true
-cp editors/nvim/init.lua ~/.config/nvim/ 2>/dev/null || true
 
-# Alternative: If you want to use the complete configuration from this repo
-# mv ~/.config/nvim ~/.config/nvim.backup 2>/dev/null || true
-# cp -r editors/nvim ~/.config/
+**Recommended** (matches `sync-configs.sh` full-directory mapping):
+
+```bash
+# Backup any existing Neovim config first
+mv ~/.config/nvim ~/.config/nvim.backup 2>/dev/null || true
+
+# Deploy the complete NvChad-based config from this repo
+cp -r editors/nvim ~/.config/
 ```
+
+**Note**: This repo no longer maintains a `lua/custom` overlay. The previous "copy only custom layer" instructions are obsolete and have been removed. See `AGENTS.md` for `stylua` validation on this directory.
 
 ### 5. Configure Editors
 

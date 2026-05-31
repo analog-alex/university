@@ -14,31 +14,52 @@ This repository serves as a centralized knowledge base and quick reference colle
 
 ```
 university/
-├── sync-configs.sh              # Syncs live configs back into this repo
-├── editors/                    # Editor configuration files
-│   ├── cursor/                 # Cursor editor keybindings
-│   └── zed/                    # Zed editor keymap
-├── fonts/                      # Recommended coding fonts
-├── git/                        # Git version control documentation
-├── laboratory/                 # Programming language documentation
-│   └── languages/
-│       ├── kotlin/             # Kotlin language reference and KDoc guide
-│       └── typescript/         # TypeScript reference with advanced features
-├── terminals/                  # Terminal configuration
-│   ├── kitty/                  # Kitty terminal config with Nord theme
-│   └── oh-my-posh/             # Oh My Posh themes and switcher script
-├── themes/                     # General theming documentation
-└── window-managers/            # Window manager configurations
-    └── aerospace/              # AeroSpace tiling window manager config
+├── sync-configs.sh           # Sync live system configs into the repo
+├── .agents/                  # Agent skills and tooling (synced)
+├── editors/                  # Cursor, Zed, Neovim (NvChad), opencode
+├── fonts/                    # Recommended fonts + list.md
+├── git/                      # Git cheat sheet
+├── keyboards/                # Dygma / hardware keyboard configs
+├── laboratory/               # Language cheat sheets (Zig, Rust, TS, Kotlin, ...)
+├── LICENSE
+├── status-bars/              # SketchyBar items + plugins
+├── system/                   # Fastfetch and other system tools
+├── terminals/                # Kitty, Ghostty, Oh My Posh themes + switcher
+├── themes/                   # General theming notes
+├── window-managers/          # AeroSpace config + helpers
+└── INSTALL.md                # Tool installation & setup instructions
 ```
 
 ## Key Features
 
-- **Language References**: Comprehensive cheat sheets for Kotlin, TypeScript, and more
-- **Development Tools**: Git commands, editor configurations, and terminal setups
-- **System Configuration**: Window manager and terminal configurations for macOS
-- **Config Syncing**: `sync-configs.sh` copies live config changes back into the repo
-- **Organized Structure**: Laboratory-style organization for quick access to information
+- **Language References**: Cheat sheets for Zig, Rust, TypeScript, Kotlin, and more
+- **Development Tools**: Git, multiple editors, and terminal setups
+- **macOS System Config**: AeroSpace, SketchyBar, Fastfetch, keyboard firmware
+- **Config Syncing**: `sync-configs.sh` (now supports `--dry-run`)
+- **Agent-Friendly**: `AGENTS.md` defines validation commands per file type
+
+## Validation Quick Checks
+
+Run these before committing (matches AGENTS.md expectations):
+
+```bash
+# Shell scripts
+bash -n sync-configs.sh
+
+# Neovim Lua (if changed)
+stylua --check editors/nvim/init.lua editors/nvim/lua
+
+# Strict JSON (Oh My Posh themes)
+python3 -m json.tool terminals/oh-my-posh/*.omp.json >/dev/null
+
+# Whitespace / conflict markers
+git diff --check
+
+# Dry-run sync to preview what would change
+./sync-configs.sh --dry-run
+```
+
+Backup policy: `*.bak` files are globally ignored and never synced (existing tracked ones were removed).
 
 ## Usage
 

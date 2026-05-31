@@ -7,7 +7,7 @@ There is no conventional app build, package manager, or automated test suite.
 Agents should make minimal edits, preserve the current layout, and validate only the files they changed.
 
 ## Rule Sources
-- Primary repo guidance: `CLAUDE.md`
+- Primary repo guidance: `CLAUDE.md` (git-ignored; see .gitignore for `*.bak` policy)
 - `.cursor/rules/`: not present
 - `.cursorrules`: not present
 - `.github/copilot-instructions.md`: not present
@@ -17,6 +17,7 @@ No extra Cursor or Copilot instruction files exist here today.
 - Main branch: `master`
 - Repo type: docs + dotfiles/configs
 - No `package.json`, `Makefile`, `pyproject.toml`, `Cargo.toml`, `go.mod`, or CI config detected
+- `.agents/` contains agent skills, prompts, and tooling (synced via sync-configs.sh)
 - `editors/` contains Cursor, Zed, and Neovim config
 - `terminals/` contains Kitty and Oh My Posh config
 - `window-managers/` contains AeroSpace config
@@ -33,7 +34,8 @@ No extra Cursor or Copilot instruction files exist here today.
 ## Core Commands
 - Repo status: `git status --short`
 - Whitespace/conflict check: `git diff --check`
-- Sync live configs into the repo: `bash ./sync-configs.sh`
+- Sync live configs into the repo: `bash ./sync-configs.sh` (supports `--dry-run`)
+- Backup policy: `*.bak` files are globally ignored (see .gitignore and README)
 - If multiple files changed, run `git diff --check` before finishing
 
 ## Shell Commands
