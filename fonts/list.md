@@ -8,5 +8,7 @@
 6. SF Mono
 7. Victor Mono
 8. Input Mono
-9. Berkeley Mono
+9. Berkeley Mono (Iosekely as an alternative)
 10. Maple Mono
+
+Aslo: Departure Mono
