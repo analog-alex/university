@@ -1,4 +1,18 @@
 CLAUDE.md
 
+# macOS cruft
+.DS_Store
+
 # Backup files (intentionally removed from tracking)
 *.bak
+editors/zed/keymap_backup.json
+editors/zed/settings_backup.json
+
+# Machine-local editor state (e.g. Zed prompts-library DB)
+*.mdb
+
+# Dependency directories
+node_modules/
+
+# Local agent settings
+.claude/settings.local.json

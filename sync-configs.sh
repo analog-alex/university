@@ -39,7 +39,6 @@ print_error() {
 DIRECTORY_MAPPINGS=(
     "$HOME/.agents|.agents"
     "$HOME/.config/nvim|editors/nvim"
-    "$HOME/.config/opencode|editors/opencode"
     "$HOME/.config/aerospace|window-managers/aerospace"
     "$HOME/.config/ghostty|terminals/ghostty"
     "$HOME/.config/fastfetch|system/fastfetch"
@@ -51,11 +50,23 @@ DIRECTORY_MAPPINGS=(
 # Individual file mappings for specific files: system_path:repo_path
 CONFIG_MAPPINGS=(
     "$HOME/Library/Application Support/Cursor/User/keybindings.json|editors/cursor/keybindings.json"
+    "$HOME/.config/opencode/opencode.json|editors/opencode/opencode.json"
 )
 
 # Oh My Posh files now live in ~/.config/oh-my-posh
 OMP_SYSTEM_DIR="$HOME/.config/oh-my-posh"
 OMP_REPO_DIR="terminals/oh-my-posh"
+
+# Check whether a path relative to a synced directory must never be synced
+is_excluded() {
+    local rel_path="$1"
+    case "$rel_path" in
+        .git/*|.svn/*|.hg/*|node_modules/*|*/node_modules/*) return 0 ;;
+        conversations/*|*/conversations/*)                   return 0 ;;
+        *~|*.bak|*.mdb|.DS_Store|*/.DS_Store)                 return 0 ;;
+        *)                                                    return 1 ;;
+    esac
+}
 
 # Function to check if file exists and is readable
 check_file_exists() {
@@ -127,13 +138,13 @@ sync_file() {
         # Compare files
         if ! cmp -s "$system_file" "$repo_file"; then
             print_status "Changes detected in: $system_file"
-            
+
             # Show diff
             echo "--- Repository version: $repo_file"
             echo "+++ System version: $system_file"
             diff -u "$repo_file" "$system_file" || true
             echo ""
-            
+
             # Copy the updated file
             safe_cp "$system_file" "$repo_file"
             if [[ $DRY_RUN != true ]]; then print_success "Updated: $repo_file"; fi
@@ -141,7 +152,7 @@ sync_file() {
         fi
     fi
 
-    return $([ "$changes_detected" = true ] && echo 0 || echo 1)
+    [[ $changes_detected == true ]]
 }
 
 # Function to sync entire directory recursively
@@ -163,15 +174,15 @@ sync_directory() {
         # Get relative path from the system directory
         local rel_path="${system_file#$system_dir/}"
         local repo_file="$repo_dir/$rel_path"
-        
+
         # Skip version control directories and common temporary files
-        if [[ "$rel_path" == .git/* ]] || [[ "$rel_path" == .svn/* ]] || [[ "$rel_path" == .hg/* ]] || [[ "$rel_path" == node_modules/* ]] || [[ "$rel_path" == */node_modules/* ]] || [[ "$rel_path" == *~ ]] || [[ "$rel_path" == *.bak ]] || [[ "$rel_path" == */.DS_Store ]]; then
+        if is_excluded "$rel_path"; then
             continue
         fi
-        
+
         # Ensure the directory exists in repo
         ensure_directory "$(dirname "$repo_file")"
-        
+
         if [[ ! -f "$repo_file" ]] || ! cmp -s "$system_file" "$repo_file"; then
             if [[ ! -f "$repo_file" ]]; then
                 print_status "New $dir_name file: $rel_path"
@@ -182,14 +193,30 @@ sync_directory() {
                 diff -u "$repo_file" "$system_file" || true
                 echo ""
             fi
-            
+
             safe_cp "$system_file" "$repo_file"
             if [[ $DRY_RUN != true ]]; then print_success "Updated: $repo_file"; fi
             changes_detected=true
         fi
     done < <(find "$system_dir" -type f -print0)
 
-    return $([ "$changes_detected" = true ] && echo 0 || echo 1)
+    # Remove repo files that were deleted from the system directory
+    while IFS= read -r -d '' repo_file; do
+        local rel_path="${repo_file#$repo_dir/}"
+
+        if is_excluded "$rel_path"; then
+            continue
+        fi
+
+        if [[ ! -f "$system_dir/$rel_path" ]]; then
+            print_status "Removed $dir_name file: $rel_path"
+            safe_rm "$repo_file"
+            if [[ $DRY_RUN != true ]]; then print_success "Deleted: $repo_file"; fi
+            changes_detected=true
+        fi
+    done < <(find "$repo_dir" -type f -print0)
+
+    [[ $changes_detected == true ]]
 }
 
 # Function to sync Oh My Posh files
@@ -237,7 +264,7 @@ sync_omp_themes() {
         fi
     done < <(find "$OMP_REPO_DIR" -maxdepth 1 -type f \( -name "*.omp.json" -o -name "switch-theme.sh" \) -print0)
 
-    return $([ "$changes_detected" = true ] && echo 0 || echo 1)
+    [[ $changes_detected == true ]]
 }
 
 # Main execution
