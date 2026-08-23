@@ -137,8 +137,8 @@ cp -r editors/nvim ~/.config/
 
 #### Cursor
 ```bash
-mkdir -p "~/Library/Application Support/Cursor/User"
-cp editors/cursor/keybindings.json "~/Library/Application Support/Cursor/User/"
+mkdir -p "$HOME/Library/Application Support/Cursor/User"
+cp editors/cursor/keybindings.json "$HOME/Library/Application Support/Cursor/User/"
 ```
 
 #### Zed

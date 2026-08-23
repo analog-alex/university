@@ -29,10 +29,10 @@ apply_padding() {
     sed -i '' "s/outer\.right.*= [0-9]*/outer.right      = $outer_right/" "$CONFIG_FILE"
 }
 
-# Function to detect current size based on outer.left value
+# Function to detect current size based on outer.top value
 get_current_size() {
-    local current_left=$(grep "outer.top" "$CONFIG_FILE" | awk '{print $3}')
-    case "$current_left" in
+    local current_top=$(grep "outer.top" "$CONFIG_FILE" | awk '{print $3}')
+    case "$current_top" in
         "20") echo "small" ;;
         "50") echo "medium" ;;
         "100") echo "large" ;;

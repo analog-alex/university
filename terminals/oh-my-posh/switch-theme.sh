@@ -4,6 +4,9 @@
 # Usage: ./switch-theme.sh <theme-name>
 # Example: ./switch-theme.sh h10
 
+# Always operate from this script's directory so theme lookups work from any cwd
+cd "$(dirname "$0")" || exit 1
+
 if [ $# -eq 0 ]; then
     echo "Usage: $0 <theme-name>"
     echo "Available themes:"
