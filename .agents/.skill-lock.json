@@ -25,9 +25,45 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/kepano/obsidian-skills.git",
       "skillPath": "skills/obsidian-markdown/SKILL.md",
-      "skillFolderHash": "5caf5d9e7de204f3904216857545f2aa36bcfcac",
+      "skillFolderHash": "4723197c6dc59abc29819da87863b1ac20b96095",
       "installedAt": "2026-05-01T13:35:25.247Z",
-      "updatedAt": "2026-05-01T13:35:25.247Z"
+      "updatedAt": "2026-08-15T14:19:19.605Z"
+    },
+    "meshy-3d-generation": {
+      "source": "meshy-dev/meshy-3d-agent",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/meshy-dev/meshy-3d-agent.git",
+      "skillPath": "skills/meshy-3d-generation/SKILL.md",
+      "skillFolderHash": "0cd9193d0efecdb9b918ba3311edae1b01e943d2",
+      "installedAt": "2026-07-18T10:02:21.945Z",
+      "updatedAt": "2026-08-15T14:19:21.425Z"
+    },
+    "blender-modeling": {
+      "source": "roble3/cc-blender-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/roble3/cc-blender-skill.git",
+      "skillPath": "plugin/skills/blender-modeling/SKILL.md",
+      "skillFolderHash": "4d7eb9cdb68710cfd0199131e6b5bde4fc0252a8",
+      "installedAt": "2026-08-22T11:55:26.519Z",
+      "updatedAt": "2026-08-22T11:55:26.519Z"
+    },
+    "blender-materials": {
+      "source": "roble3/cc-blender-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/roble3/cc-blender-skill.git",
+      "skillPath": "plugin/skills/blender-materials/SKILL.md",
+      "skillFolderHash": "23485082e8fdd816c9f7a253d40ac358fdc41457",
+      "installedAt": "2026-08-22T11:55:33.158Z",
+      "updatedAt": "2026-08-22T11:55:33.158Z"
+    },
+    "blender-export": {
+      "source": "roble3/cc-blender-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/roble3/cc-blender-skill.git",
+      "skillPath": "plugin/skills/blender-export/SKILL.md",
+      "skillFolderHash": "03700a4674b4159bafa75e2d5390b5624f82803d",
+      "installedAt": "2026-08-22T11:55:40.948Z",
+      "updatedAt": "2026-08-22T11:55:40.948Z"
     }
   },
   "dismissed": {
@@ -36,16 +72,17 @@
   "lastSelectedAgents": [
     "amp",
     "antigravity",
+    "antigravity-cli",
     "cline",
     "codex",
     "cursor",
     "deepagents",
-    "dexto",
-    "firebender",
     "gemini-cli",
     "github-copilot",
-    "kimi-cli",
+    "kimi-code-cli",
     "opencode",
-    "warp"
+    "warp",
+    "zed",
+    "claude-code"
   ]
 }

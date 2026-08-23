@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "terminal": {
+    "font_family": "JetBrains Mono"
+  },
+  "disable_ai": false,
   "outline_panel": {
     "dock": "left",
   },
@@ -21,22 +25,34 @@
   },
   "project_panel": { "dock": "right" },
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-opus-4.5",
+      "enable_thinking": false
+    },
     "dock": "right",
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
       "effort": "high",
       "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "model": "gpt-5.3-codex",
     },
   },
   "show_edit_predictions": true,
   "base_keymap": "JetBrains",
   "vim_mode": true,
   "ui_font_size": 16,
-  "buffer_font_size": 13.5,
-  "buffer_font_family": "Input",
-  "theme": "Catppuccin Macchiato Blue (Blur)",
+  "buffer_font_size": 12,
+  "buffer_font_family": "MonoLisa",
+  "theme": "Rosé Pine Moon",
   "icon_theme": "Catppuccin Mocha",
   "buffer_font_features": {
     "liga": true,
@@ -51,6 +67,9 @@
   },
   "indent_guides": {
     "enabled": true,
+  },
+  "scrollbar": {
+    "show": "never"
   },
   "experimental.theme_overrides": {
     "syntax": {

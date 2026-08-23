@@ -78,6 +78,7 @@
     "bindings": {
       "space /": "editor::ToggleComments",
       "cmd-k": "assistant::InlineAssist",
+      "ctrl-shift-l": "agent::ToggleFocus",
     },
   },
   {

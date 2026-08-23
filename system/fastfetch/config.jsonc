@@ -3,12 +3,12 @@
   "logo": {
     "source": "~/.config/fastfetch/logos/apple.txt",
     "color": {
-      "1": "#cba6f7",
-      "2": "#f5c2e7",
-      "3": "#f38ba8",
-      "4": "#fab387",
-      "5": "#f9e2af",
-      "6": "#a6e3a1"
+      "1": "#c4a7e7",
+      "2": "#ebbcba",
+      "3": "#eb6f92",
+      "4": "#f6c177",
+      "5": "#9ccfd8",
+      "6": "#31748f"
     }
   },
   "modules": [

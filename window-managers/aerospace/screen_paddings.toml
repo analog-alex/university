@@ -9,8 +9,8 @@
     outer.right      = 20
 
 [medium]
-    inner.horizontal = 50
-    inner.vertical   = 50
+    inner.horizontal = 25
+    inner.vertical   = 25
     outer.left       = 50
     outer.bottom     = 50
     outer.top        = 50

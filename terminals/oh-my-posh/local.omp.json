@@ -5,30 +5,81 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#8bd5ca",
+          "foreground": "#88c0d0",
           "style": "plain",
-          "template": " {{ .UserName }} on",
+          "template": "<#5e81ac>\u250f[</>{{ .UserName }}<#5e81ac>]</>",
           "type": "session"
         },
         {
-          "foreground": "#91d7e3",
-          "options": {
-            "folder_separator_icon": "/",
-            "style": "folder"
-          },
-          "style": "plain",
-          "template": "  {{ base .Location }} ",
-          "type": "path"
-        },
-        {
-          "foreground": "#c6a0f6",
-          "powerline_symbol": "",
-          "options": {
+          "foreground": "#b48ead",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_status": true,
             "fetch_upstream_icon": true
           },
           "style": "plain",
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
+          "template": "<#5e81ac>--[</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#8fbcbb> \u25cf </>{{ end }}{{ if .Staging.Changed }}<#88c0d0> \u25cf </>{{ end }}<#5e81ac>]</>",
           "type": "git"
+        },
+        {
+          "foreground": "#b48ead",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#5e81ac>]</>",
+          "type": "aws"
+        },
+        {
+          "foreground": "#b48ead",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}<#5e81ac>]</>",
+          "type": "kubectl"
+        },
+        {
+          "foreground": "#8fbcbb",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}<#5e81ac>]</>",
+          "type": "node"
+        },
+        {
+          "foreground": "#a3be8c",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "python"
+        },
+        {
+          "foreground": "#88c0d0",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue627 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "go"
+        },
+        {
+          "foreground": "#d08770",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue7a8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "rust"
+        },
+        {
+          "foreground": "#ebcb8b",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue6a9 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "zig"
+        },
+        {
+          "foreground": "#5e81ac",
+          "style": "plain",
+          "template": "<#5e81ac>--[</>\ue61d {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#5e81ac>]</>",
+          "type": "cmake"
+        },
+        {
+          "foreground": "#d8dee9",
+          "style": "plain",
+          "template": "<#5e81ac>[</>\uf0e7<#5e81ac>]</>",
+          "type": "root"
+        },
+        {
+          "foreground": "#d8dee9",
+          "style": "plain",
+          "template": "<#5e81ac>[x</>{{ reason .Code }}<#5e81ac>]</>",
+          "type": "status"
         }
       ],
       "type": "prompt"
@@ -37,12 +88,12 @@
       "alignment": "right",
       "segments": [
         {
-          "foreground": "#8aadf4",
+          "foreground": "#81a1c1",
           "options": {
             "precision": 1
           },
           "style": "plain",
-          "template": "CPU {{ round .Load1 .Precision }} | RAM {{ round .PhysicalPercentUsed .Precision }}% ",
+          "template": "<#5e81ac>[</>CPU {{ round .Load1 .Precision }} · MEM {{ round .PhysicalPercentUsed .Precision }}% ({{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB)<#5e81ac>]</>",
           "type": "sysinfo"
         }
       ],
@@ -53,42 +104,13 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#a6da95",
-          "options": {
-            "extensions": [
-              "*.js",
-              "*.ts",
-              "package.json",
-              ".nvmrc",
-              "pnpm-workspace.yaml",
-              ".pnpmfile.cjs",
-              ".vue",
-              "bun.lock",
-              "bun.lockb"
-            ],
-            "fetch_package_manager": true
+          "foreground": "#88c0d0",
+          "properties": {
+            "style": "full"
           },
           "style": "plain",
-          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
-          "type": "node"
-        },
-        {
-          "foreground": "#eed49f",
-          "style": "plain",
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
-          "type": "python"
-        },
-        {
-          "foreground": "#7dc4e4",
-          "style": "plain",
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "type": "go"
-        },
-        {
-          "foreground": "#f5a97f",
-          "style": "plain",
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "type": "zig"
+          "template": "<#5e81ac>\u2516[</>{{ .Path }}<#5e81ac>]</>",
+          "type": "path"
         }
       ],
       "type": "prompt"
@@ -98,15 +120,9 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#ed8796",
+          "foreground": "#5e81ac",
           "style": "plain",
-          "template": " ",
-          "type": "root"
-        },
-        {
-          "foreground": "#eed49f",
-          "style": "plain",
-          "template": "# ",
+          "template": " \ue602 ",
           "type": "text"
         }
       ],
@@ -115,9 +131,9 @@
   ],
   "transient_prompt": {
     "background": "transparent",
-    "foreground": "#f5bde6",
+    "foreground": "#88c0d0",
     "template": "~"
   },
   "final_space": true,
-  "version": 4
+  "version": 3
 }

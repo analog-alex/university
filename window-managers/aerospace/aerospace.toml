@@ -10,18 +10,12 @@ after-login-command = []
 
 # Commands executed after AeroSpace startup
 # Runs after 'after-login-command' completes
-# after-startup-command = ['exec-and-forget sketchybar']
 after-startup-command = [
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=7.0'
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=3.0'
 ]
 
 # Automatically start AeroSpace when logging into macOS
 start-at-login = false
-
-# Notify Sketchybar about workspace change
-#exec-on-workspace-change = ['/bin/bash', '-c',
-#    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-#]
 
 # =================================================================
 # Window Normalization Settings
@@ -170,6 +164,11 @@ run = "layout tiling"
 [[on-window-detected]]
 if.app-id = "com.apple.finder"
 run = "layout floating"
+
+# Wispr Flow (Hub + Status) always on workspace 5
+[[on-window-detected]]
+if.app-id = 'com.electron.wispr-flow'
+run = ['move-node-to-workspace 5']
 
 # =================================================================
 # Service Mode Key Bindings
