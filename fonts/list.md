@@ -11,4 +11,4 @@
 9. Berkeley Mono (Iosekely as an alternative)
 10. Maple Mono
 
-Aslo: Departure Mono
+Also rans: Departure Mono, Commit Mono
