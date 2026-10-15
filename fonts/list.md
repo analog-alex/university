@@ -5,10 +5,10 @@
 3. Iosevka
 4. Hasklig (Source Code Pro with Ligatures)
 5. Cartograph CF
-6. SF Mono
+6. Geist Mono
 7. Victor Mono
 8. Input Mono
 9. Berkeley Mono (Iosekely as an alternative)
 10. Maple Mono
 
-Also rans: Departure Mono, Commit Mono
+Also rans: Departure Mono, Commit Mono, Lyth Mono
