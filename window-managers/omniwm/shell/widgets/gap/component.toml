@@ -1,0 +1,8 @@
+title = "Gap cycler"
+icon = "rectangle.inset.topleft.filled"
+views = ["compact"]
+
+capabilities = { provider = true, purpose = "Cycles your outer padding presets (50/100/0) by editing ~/.config/omniwm/settings.toml" }
+
+[provider]
+command = ["gap-helper.py"]

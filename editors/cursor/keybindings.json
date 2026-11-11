@@ -42,5 +42,10 @@
     {
         "key": "cmd+g",
         "command": "workbench.action.focusSideBar"
+    },
+    {
+        "key": "alt+cmd+s",
+        "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+        "when": "!isAuxiliaryWindowFocusedContext"
     }
 ]

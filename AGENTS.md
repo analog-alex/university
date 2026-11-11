@@ -20,7 +20,7 @@ No extra Cursor or Copilot instruction files exist here today.
 - `.agents/` contains agent skills, prompts, and tooling (synced via sync-configs.sh)
 - `editors/` contains Cursor, Zed, and Neovim config
 - `terminals/` contains Kitty and Oh My Posh config
-- `window-managers/` contains AeroSpace config
+- `window-managers/` contains AeroSpace and OmniWM config
 - `status-bars/` contains SketchyBar config/scripts
 - `system/` contains system utility config such as Fastfetch
 - `laboratory/` contains language cheat sheets and docs

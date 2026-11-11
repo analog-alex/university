@@ -40,6 +40,7 @@ DIRECTORY_MAPPINGS=(
     "$HOME/.agents|.agents"
     "$HOME/.config/nvim|editors/nvim"
     "$HOME/.config/aerospace|window-managers/aerospace"
+    "$HOME/.config/omniwm|window-managers/omniwm"
     "$HOME/.config/ghostty|terminals/ghostty"
     "$HOME/.config/fastfetch|system/fastfetch"
     "$HOME/.config/sketchybar|status-bars/sketchybar"
@@ -62,8 +63,10 @@ is_excluded() {
     local rel_path="$1"
     case "$rel_path" in
         .git/*|.svn/*|.hg/*|node_modules/*|*/node_modules/*) return 0 ;;
+        __pycache__/*|*/__pycache__/*|*.pyc)                 return 0 ;;
         conversations/*|*/conversations/*)                   return 0 ;;
         *~|*.bak|*.mdb|.DS_Store|*/.DS_Store)                 return 0 ;;
+        backup-[0-9]*/*|*.pre-v[0-9]*|*.pre-roslyn.*)        return 0 ;;
         *)                                                    return 1 ;;
     esac
 }
