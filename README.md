@@ -26,7 +26,7 @@ university/
 ├── system/                   # Fastfetch and other system tools
 ├── terminals/                # Kitty, Ghostty, Oh My Posh themes + switcher
 ├── themes/                   # General theming notes
-├── window-managers/          # AeroSpace config + helpers
+├── window-managers/          # AeroSpace + OmniWM config + helpers
 └── INSTALL.md                # Tool installation & setup instructions
 ```
 
@@ -34,7 +34,7 @@ university/
 
 - **Language References**: Cheat sheets for Zig, Rust, TypeScript, Kotlin, and more
 - **Development Tools**: Git, multiple editors, and terminal setups
-- **macOS System Config**: AeroSpace, SketchyBar, Fastfetch, keyboard firmware
+- **macOS System Config**: AeroSpace, OmniWM, SketchyBar, Fastfetch, keyboard firmware
 - **Config Syncing**: `sync-configs.sh` (now supports `--dry-run`)
 - **Agent-Friendly**: `AGENTS.md` defines validation commands per file type
 

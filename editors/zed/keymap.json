@@ -44,6 +44,7 @@
 
       // theme
       "space t h": "theme_selector::Toggle",
+      "space t i": "icon_theme_selector::Toggle",
 
       // splits
       "space v": "pane::SplitRight",
@@ -78,6 +79,7 @@
     "bindings": {
       "space /": "editor::ToggleComments",
       "cmd-k": "assistant::InlineAssist",
+      "ctrl-shift-l": "agent::ToggleFocus",
     },
   },
   {

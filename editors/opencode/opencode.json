@@ -23,6 +23,21 @@
       }
     }
   },
+  "provider": {
+    "xai": {
+      "models": {
+        "grok-composer-2.5-fast": {
+          "name": "Composer 2.5 Fast",
+          "attachment": true,
+          "tool_call": true,
+          "limit": {
+            "context": 256000,
+            "output": 256000
+          }
+        }
+      }
+    }
+  },
   "mcp": {
     "linear-server": {
       "type": "remote",
@@ -33,6 +48,14 @@
       "type": "remote",
       "url": "https://mcp.notion.com/mcp",
       "enabled": true
+    },
+    "meshy": {
+      "type": "local",
+      "command": ["npx", "-y", "@meshy-ai/meshy-mcp-server"],
+      "enabled": true,
+      "environment": {
+        "MESHY_API_KEY": "msy_XPPOldXvnPvaJtAoMfCG2kV10y3Eaikixhvz"
+      }
     }
   }
 }

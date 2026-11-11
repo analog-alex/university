@@ -1,0 +1,40 @@
+
+[profiles]
+
+[profiles.default]
+center = ["active-window"]
+leading = ["apple-menu", "app-menu", "omniwm", "workspaces", "scratchpads"]
+trailing = ["system-stats"]
+
+[profiles.default.hiddenBar]
+enabled = false
+
+[profiles.default.workspaceBar]
+backgroundOpacity = 0.1
+fullWidth = false
+fullWidthNotchMode = "off"
+height = 20.0
+hoverPreviewsEnabled = false
+inactiveIconOpacity = 0.2
+position = "right"
+reserveLayoutSpace = false
+showAccentHighlights = true
+showLabels = true
+windowLevel = "popup"
+
+[profiles.default.island]
+root = "gap-island-root"
+displays = "all"
+width = 140
+height = 46
+fullscreen = "hide"
+
+[[profiles.default.island.components]]
+id = "gap"
+widget = "gap"
+
+[[profiles.default.monitorBarOverrides]]
+height = 28.0
+id = "79293FB9-27ED-4A33-B88C-DEC6A663F08A"
+monitorDisplayUUID = "906B28F9-AF5E-4E40-B9F0-D07A91103C9A"
+monitorName = "MPG 274U E16M"
