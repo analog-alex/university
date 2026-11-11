@@ -66,7 +66,7 @@ is_excluded() {
         __pycache__/*|*/__pycache__/*|*.pyc)                 return 0 ;;
         conversations/*|*/conversations/*)                   return 0 ;;
         *~|*.bak|*.mdb|.DS_Store|*/.DS_Store)                 return 0 ;;
-        backup-[0-9]*/*|*.pre-v[0-9]*)                       return 0 ;;
+        backup-[0-9]*/*|*.pre-v[0-9]*|*.pre-roslyn.*)        return 0 ;;
         *)                                                    return 1 ;;
     esac
 }
