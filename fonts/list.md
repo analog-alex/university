@@ -3,7 +3,7 @@
 1. MonoLisa
 2. JetBrains Mono
 3. Iosevka
-4. Pragamsevka (free PragmataPro)
+4. Pragmasevka (free PragmataPro)
 5. Cartograph CF
 6. Geist Mono
 7. Victor Mono
