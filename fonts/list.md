@@ -3,12 +3,13 @@
 1. MonoLisa
 2. JetBrains Mono
 3. Iosevka
-4. Hasklig (Source Code Pro with Ligatures)
+4. Pragamsevka (free PragmataPro)
 5. Cartograph CF
 6. Geist Mono
 7. Victor Mono
 8. Input Mono
-9. Berkeley Mono (Iosekely as an alternative)
+9. Iosekeley (free version of Berkeley Mono)
 10. Maple Mono
+11. Lyth Mono
 
-Also rans: Departure Mono, Commit Mono, Lyth Mono
+Also rans: Departure Mono, Commit Mono, Hasklig (Source Code Pro with Ligatures)
