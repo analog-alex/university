@@ -1141,7 +1141,7 @@ binding = "Unassigned"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Q"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
