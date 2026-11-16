@@ -817,11 +817,11 @@ binding = "Option+T"
 id = "toggleColumnTabbed"
 
 [[hotkeys]]
-binding = "Option+Home"
+binding = "Option+Shift+7"
 id = "focusColumnFirst"
 
 [[hotkeys]]
-binding = "Option+End"
+binding = "Option+Shift+3"
 id = "focusColumnLast"
 
 [[hotkeys]]
