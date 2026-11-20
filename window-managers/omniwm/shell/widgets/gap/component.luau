@@ -1,5 +1,5 @@
 -- gap: component view — click to cycle outer padding presets
--- medium (50) → large (100) → default (0), via the approved helper script.
+-- medium (50) → large (100) → xl (150) → default (0), via the approved helper script.
 
 return {
 	views = {

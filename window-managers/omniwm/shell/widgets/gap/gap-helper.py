@@ -2,7 +2,7 @@
 """gap-helper: OmniShell provider for the `gap` bar widget.
 
 Cycles the outer padding presets in ~/.config/omniwm/settings.toml:
-medium (50) -> large (100) -> default (0) -> medium ...
+medium (50) -> large (100) -> xl (150) -> default (0) -> medium ...
 
 Speaks the OmniShell provider protocol: JSON arrays, one per line, on
 stdin/stdout. Handles one action, "cycle", and publishes state topic "mode".
@@ -14,8 +14,8 @@ import re
 import sys
 
 SETTINGS = os.path.expanduser("~/.config/omniwm/settings.toml")
-ORDER = ["medium", "large", "default"]
-OUTER = {"medium": 50.0, "large": 100.0, "default": 0.0}
+ORDER = ["medium", "large", "xl", "default"]
+OUTER = {"medium": 50.0, "large": 100.0, "xl": 150.0, "default": 0.0}
 
 
 def emit(frame):
