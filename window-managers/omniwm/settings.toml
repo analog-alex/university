@@ -211,7 +211,7 @@ weather = true
 command = ["gap-helper.py"]
 denied = false
 name = "gap"
-sha256 = "4685a7df73403f0ea7cc6ffbfc35140c21269590bd51781fb626515e7ba6c6e9"
+sha256 = "4c1e045a4a6bbf6a2cd1d0331e268bee0848759cb644a0b1db8fe33e395a32ea"
 source = "/Users/miguelalexandre/.config/omniwm/shell/widgets/gap"
 
 [statusBar]
