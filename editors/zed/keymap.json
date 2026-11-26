@@ -11,6 +11,7 @@
     "bindings": {
       "ctrl-n": "project_panel::ToggleFocus",
       "shift shift": "file_finder::Toggle",
+      "ctrl-shift-h": "multi_workspace::ToggleWorkspaceSidebar",
     },
   },
   {
@@ -71,7 +72,18 @@
       "]d": "editor::GoToDiagnostic",
       "[d": "editor::GoToPreviousDiagnostic",
       "space e": "diagnostics::Deploy",
+      "space l": "outline::Toggle",
       "space t t": "terminal_panel::ToggleFocus",
+
+      // git (source control)
+      "space s s": "git_panel::ToggleFocus",
+      "space s b": "git::Blame",
+      "space h h": "editor::BlameHover",
+      "space s h": "git::FileHistory",
+      "space s l": "git_graph::Open",
+      "space s d": "git::Diff",
+      "space s c": "git::Branch",
+      "space s v": "git::ViewCommit",
     },
   },
   {
